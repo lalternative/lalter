@@ -1,20 +1,65 @@
 import { Link } from '@tanstack/react-router'
 
 export function Footer() {
+  const year = new Date().getFullYear()
   return (
-    <footer className="mt-24 border-t border-black/10">
-      <div className="mx-auto flex max-w-5xl flex-col gap-2 px-6 py-8 text-sm text-black/70 sm:flex-row sm:items-center sm:justify-between">
-        <p>L'Alter — un collectif européen</p>
-        <div className="flex gap-4">
-          <Link to="/a-propos" className="hover:text-[color:var(--color-accent-primary)]">
-            À propos
-          </Link>
-          <a
-            href="mailto:contact@lalter.fr"
-            className="hover:text-[color:var(--color-accent-primary)]"
-          >
-            contact@lalter.fr
-          </a>
+    <footer className="mt-32 border-t-2 border-text">
+      <div className="mx-auto w-full max-w-7xl px-6 py-12">
+        <div className="grid gap-10 sm:grid-cols-12">
+          <div className="sm:col-span-6">
+            <p className="font-heading text-4xl leading-none sm:text-5xl">
+              L'ALTER
+            </p>
+            <p className="mt-4 max-w-sm text-base text-text/70">
+              Un collectif européen pour un digital commun, partagé,
+              souverain.
+            </p>
+          </div>
+
+          <div className="sm:col-span-3">
+            <p className="label text-text/50">Navigation</p>
+            <ul className="mt-4 space-y-2 text-base">
+              <li>
+                <Link to="/apps" className="hover:text-accent-primary">
+                  Apps
+                </Link>
+              </li>
+              <li>
+                <Link to="/pot" className="hover:text-accent-primary">
+                  Pot commun
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="hover:text-accent-primary">
+                  Revue
+                </Link>
+              </li>
+              <li>
+                <Link to="/a-propos" className="hover:text-accent-primary">
+                  À propos
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="sm:col-span-3">
+            <p className="label text-text/50">Contact</p>
+            <ul className="mt-4 space-y-2 text-base">
+              <li>
+                <a
+                  href="mailto:contact@lalter.fr"
+                  className="hover:text-accent-primary"
+                >
+                  contact@lalter.fr
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-12 flex flex-col gap-2 border-t border-text/15 pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="label text-text/60">№ 01 — {year}</p>
+          <p className="label text-text/60">Édité depuis l'Europe</p>
         </div>
       </div>
     </footer>

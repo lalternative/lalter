@@ -6,11 +6,46 @@ export const Route = createFileRoute('/blog/')({
 
 function BlogIndex() {
   return (
-    <div className="space-y-4">
-      <h1 className="text-5xl">Le blog</h1>
-      <p className="text-black/70">
-        Aucun article publié pour l'instant — bientôt.
-      </p>
+    <div>
+      <section className="border-b-2 border-text">
+        <div className="mx-auto w-full max-w-7xl px-6 py-20 sm:py-28">
+          <p className="label text-text/60">La revue — № 01</p>
+          <h1 className="display-xl mt-6">La revue</h1>
+        </div>
+      </section>
+
+      <section className="bg-accent-primary text-bg">
+        <div className="mx-auto w-full max-w-7xl px-6 py-32 sm:py-44">
+          <div className="mx-auto max-w-4xl">
+            <p className="label opacity-80">À paraître</p>
+            <p className="font-heading mt-8 text-4xl uppercase leading-tight sm:text-6xl">
+              « Une revue lente, écrite à plusieurs mains, sur ce que veut
+              dire faire du logiciel en Europe aujourd'hui. »
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="mx-auto w-full max-w-3xl px-6 py-20 sm:py-28">
+          <div className="prose-editorial text-text/85">
+            <p>
+              La revue de L'Alter ouvrira ses pages dans les prochains mois.
+              On y publiera des textes courts, denses, sur la pratique du
+              logiciel : choix d'infrastructure, économie des petites
+              équipes, dépendances, souveraineté concrète.
+            </p>
+            <p>
+              Pas de hot takes, pas de classements, pas de tendances. Une
+              cadence d'éditeur — quelques numéros par an, signés par les
+              gens qui font.
+            </p>
+          </div>
+          <div className="mt-12 border-t-2 border-text pt-6">
+            <p className="label text-text/60">Premier numéro — à venir</p>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }

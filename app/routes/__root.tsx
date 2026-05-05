@@ -37,10 +37,10 @@ export const Route = createRootRoute({
 
 function NotFound() {
   return (
-    <div className="flex min-h-[60vh] items-center justify-center">
+    <div className="flex min-h-[60vh] items-center justify-center px-6">
       <div className="text-center">
-        <p className="text-5xl">404</p>
-        <p className="mt-2 text-sm text-black/60">Page introuvable.</p>
+        <p className="display-xl text-accent-primary">404</p>
+        <p className="mt-4 label text-text/60">Page introuvable</p>
       </div>
     </div>
   )
@@ -64,7 +64,7 @@ function RootContent() {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
-      <main className="mx-auto w-full max-w-5xl flex-1 px-6 py-12">
+      <main className="flex-1">
         <Outlet />
       </main>
       <Footer />
