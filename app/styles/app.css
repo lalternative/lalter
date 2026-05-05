@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+/*
+ * L'Alter — visual identity baseline.
+ * UX designer will iterate on these tokens.
+ */
+:root {
+  --color-bg: #f5f1ea;
+  --color-text: #1a1a1a;
+  --color-accent-primary: #e63946;
+  --color-accent-secondary: #264653;
+  --color-warm: #f4a261;
+
+  --font-heading: 'Anton', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+@theme inline {
+  --color-bg: var(--color-bg);
+  --color-text: var(--color-text);
+  --color-accent-primary: var(--color-accent-primary);
+  --color-accent-secondary: var(--color-accent-secondary);
+  --color-warm: var(--color-warm);
+
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+}
+
+html,
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.01em;
+}
