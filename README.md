@@ -1,6 +1,6 @@
-# L'Alter
+# Capacific
 
-Landing + blog + dashboard for the L'Alter collective (Synthiz, Skalpai, Spore, NATS Dash).
+Landing + blog + dashboard for Capacific — European apps that put the power to act back in your hands (Synthiz, Skalpai, Spore, NATS Dash).
 
 Static TanStack Start site. No backend.
 

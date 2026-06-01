@@ -12,9 +12,9 @@ function AProposPage() {
           <p className="label text-text/60">Le collectif</p>
           <h1 className="display-xl mt-6">À propos</h1>
           <p className="chapeau mt-10 max-w-2xl">
-            L'Alter est un collectif d'apps européennes mutualisant une
-            partie de leurs revenus pour financer les briques numériques
-            manquantes.
+            Capacific réunit des outils sobres qui vous donnent les moyens
+            d'agir par vous-même — et mutualisent une partie de leurs revenus
+            dans un pot commun pour financer les briques qui manquent encore.
           </p>
         </div>
       </section>
@@ -23,22 +23,21 @@ function AProposPage() {
         <div className="mx-auto w-full max-w-3xl px-6 py-20 sm:py-28">
           <p className="label text-accent-primary">Notre lecture</p>
           <h2 className="font-heading mt-6 text-4xl uppercase leading-tight sm:text-5xl">
-            Le web, à l'origine, était un commun.
+            Vous en êtes déjà capable.
           </h2>
           <div className="prose-editorial mt-10 text-text/85">
             <p>
-              Le web est né d'une idée simple : des protocoles ouverts, des
-              gens qui partagent, une infrastructure commune que personne
-              ne possède en propre. Cette idée tient toujours, même si
-              l'industrie a fini par la recouvrir.
+              La plupart des outils décident à votre place : ils simplifient
+              en vous retirant la main. Capacific part de l'idée inverse —
+              vous savez ce que vous faites, il suffit qu'on vous en donne les
+              moyens.
             </p>
             <p>
-              L'Alter rassemble des éditeurs d'apps qui veulent continuer à
-              construire dans cette filiation. Chaque app reste libre,
-              indépendante, économiquement viable de son côté. Ce qui nous
-              relie : une part des revenus reversée au pot commun, et la
-              conviction qu'on peut faire du logiciel européen sans
-              attendre de subvention ni de plateforme.
+              Chaque outil couvre une capacité concrète : tenir ses comptes,
+              se faire entendre, faire fructifier, garder la main sur son
+              savoir. Sobre, lisible, sans intermédiaire qui s'interpose.
+              Ce qui les relie : une part des revenus reversée au pot commun,
+              et la conviction qu'on peut reprendre la main soi-même.
             </p>
             <p>
               Ce n'est pas un manifeste. C'est juste la manière dont on a
@@ -59,15 +58,15 @@ function AProposPage() {
             </div>
             <div className="flex flex-col justify-end sm:col-span-7">
               <p className="chapeau opacity-90">
-                Vous éditez une app européenne et vous vous reconnaissez
-                dans cette démarche ? Vous voulez juste discuter ? Une
+                Vous vous reconnaissez dans cette démarche, ou vous voulez
+                juste discuter ? Une
                 seule adresse.
               </p>
               <a
-                href="mailto:contact@lalter.fr"
+                href="mailto:contact@capacific.fr"
                 className="mt-8 font-heading text-3xl uppercase tracking-tight text-accent-primary hover:underline sm:text-4xl"
               >
-                contact@lalter.fr
+                contact@capacific.fr
               </a>
             </div>
           </div>

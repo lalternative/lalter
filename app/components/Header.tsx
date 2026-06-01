@@ -1,7 +1,7 @@
 import { Link } from '@tanstack/react-router'
 
 const navLinks = [
-  { to: '/apps', label: 'Apps' },
+  { to: '/apps', label: 'Capacités' },
   { to: '/pot', label: 'Pot commun' },
   { to: '/blog', label: 'Revue' },
   { to: '/a-propos', label: 'À propos' },
@@ -14,9 +14,9 @@ export function Header() {
         <Link
           to="/"
           className="font-heading text-3xl leading-none tracking-tight sm:text-4xl"
-          aria-label="L'Alter — accueil"
+          aria-label="Capacific — accueil"
         >
-          L'ALTER
+          CAPACIFIC
         </Link>
         <nav
           aria-label="Navigation principale"

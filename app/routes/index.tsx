@@ -4,32 +4,37 @@ export const Route = createFileRoute('/')({
   component: LandingPage,
 })
 
-type App = {
+type Capacite = {
   name: string
   tagline: string
   kicker: string
 }
 
-const apps: App[] = [
+const capacites: Capacite[] = [
   {
-    name: 'Synthiz',
-    tagline: 'Second cerveau européen.',
-    kicker: 'Connaissance',
+    name: 'Connaissance',
+    tagline: 'Avoir les idées, garder la main sur son savoir.',
+    kicker: 'Le point de départ',
   },
   {
-    name: 'Skalpai',
-    tagline: 'Observabilité pour les solos.',
-    kicker: 'Infra',
+    name: 'Technique',
+    tagline: 'Tenir ses outils sans dépendre de personne.',
+    kicker: 'La machine',
   },
   {
-    name: 'Spore',
-    tagline: 'Email transactionnel européen.',
-    kicker: 'Messagerie',
+    name: 'Création',
+    tagline: 'Faire exister ce que vous lancez.',
+    kicker: 'Produire',
   },
   {
-    name: 'NATS Dash',
-    tagline: 'Dashboard NATS JetStream.',
-    kicker: 'Outils',
+    name: 'Financement',
+    tagline: 'Financer ce qu\'on entreprend, sans intermédiaire qui prélève.',
+    kicker: 'Le nerf',
+  },
+  {
+    name: 'Communication',
+    tagline: 'Se faire connaître par ses propres moyens.',
+    kicker: 'Se faire entendre',
   },
 ]
 
@@ -45,19 +50,19 @@ function LandingPage() {
           </div>
 
           <h1 className="display-xxl mt-8 sm:mt-10">
-            L'<span className="text-accent-primary">Alter</span>
+            Capac<span className="text-accent-primary">ific</span>
           </h1>
 
           <div className="mt-10 grid gap-10 sm:mt-14 sm:grid-cols-12">
             <p className="chapeau sm:col-span-7 sm:col-start-1">
-              Participez à un digital commun et souverain. Un collectif d'apps
-              européennes qui mutualisent une part de leurs revenus pour
-              financer les briques manquantes du web.
+              Reprenez le pouvoir d'agir. Des outils sobres qui vous rendent
+              capable — vos idées, vos outils, ce que vous créez, ce que vous
+              financez, votre parole — sans personne pour décider à votre place.
             </p>
             <div className="sm:col-span-4 sm:col-start-9 sm:self-end">
               <p className="label text-text/60">Au sommaire</p>
               <ul className="mt-3 space-y-1 text-base">
-                <li>— Quatre apps, un même esprit</li>
+                <li>— Cinq capacités à reprendre</li>
                 <li>— Un pot commun, transparent</li>
                 <li>— Une revue à venir</li>
               </ul>
@@ -66,11 +71,11 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* APPS — asymmetric editorial cards */}
+      {/* CAPACITÉS — asymmetric editorial cards */}
       <section className="border-b-2 border-text">
         <div className="mx-auto w-full max-w-7xl px-6 py-20 sm:py-28">
           <div className="flex items-baseline justify-between gap-6">
-            <h2 className="display-lg">Les apps</h2>
+            <h2 className="display-lg">Les capacités</h2>
             <Link
               to="/apps"
               className="label text-accent-primary hover:underline"
@@ -82,35 +87,45 @@ function LandingPage() {
           <div className="mt-14 grid grid-cols-1 gap-px bg-text sm:grid-cols-12">
             {/* big tile */}
             <article className="col-span-1 bg-accent-primary p-8 text-bg sm:col-span-7 sm:p-12">
-              <p className="label opacity-80">{apps[0].kicker}</p>
+              <p className="label opacity-80">{capacites[0].kicker}</p>
               <h3 className="font-heading mt-6 text-6xl leading-none sm:text-8xl">
-                {apps[0].name}
+                {capacites[0].name}
               </h3>
-              <p className="chapeau mt-6 max-w-md">{apps[0].tagline}</p>
+              <p className="chapeau mt-6 max-w-md">{capacites[0].tagline}</p>
             </article>
 
             <article className="col-span-1 bg-bg p-8 sm:col-span-5 sm:p-12">
-              <p className="label text-text/60">{apps[1].kicker}</p>
+              <p className="label text-text/60">{capacites[1].kicker}</p>
               <h3 className="font-heading mt-6 text-5xl leading-none sm:text-7xl">
-                {apps[1].name}
+                {capacites[1].name}
               </h3>
-              <p className="mt-6 text-base text-text/80">{apps[1].tagline}</p>
+              <p className="mt-6 text-base text-text/80">{capacites[1].tagline}</p>
             </article>
 
             <article className="col-span-1 bg-accent-secondary p-8 text-bg sm:col-span-5 sm:p-12">
-              <p className="label opacity-70">{apps[2].kicker}</p>
+              <p className="label opacity-70">{capacites[2].kicker}</p>
               <h3 className="font-heading mt-6 text-5xl leading-none sm:text-7xl">
-                {apps[2].name}
+                {capacites[2].name}
               </h3>
-              <p className="mt-6 text-base opacity-90">{apps[2].tagline}</p>
+              <p className="mt-6 text-base opacity-90">{capacites[2].tagline}</p>
             </article>
 
             <article className="col-span-1 bg-warm p-8 sm:col-span-7 sm:p-12">
-              <p className="label text-text/70">{apps[3].kicker}</p>
+              <p className="label text-text/70">{capacites[3].kicker}</p>
               <h3 className="font-heading mt-6 text-6xl leading-none sm:text-8xl">
-                {apps[3].name}
+                {capacites[3].name}
               </h3>
-              <p className="chapeau mt-6 max-w-md">{apps[3].tagline}</p>
+              <p className="chapeau mt-6 max-w-md">{capacites[3].tagline}</p>
+            </article>
+
+            <article className="col-span-1 bg-text p-8 text-bg sm:col-span-12 sm:p-12">
+              <p className="label opacity-70">{capacites[4].kicker}</p>
+              <h3 className="font-heading mt-6 text-6xl leading-none sm:text-8xl">
+                {capacites[4].name}
+              </h3>
+              <p className="chapeau mt-6 max-w-xl opacity-90">
+                {capacites[4].tagline}
+              </p>
             </article>
           </div>
         </div>
@@ -129,10 +144,10 @@ function LandingPage() {
             </div>
             <div className="flex flex-col justify-end sm:col-span-5">
               <p className="chapeau opacity-90">
-                Une part des revenus de chaque app alimente un pot commun. Ces
-                fonds financent les briques numériques européennes qui nous
-                manquent — bibliothèques open source, infrastructures
-                partagées, outils communs.
+                Une part des revenus de chaque outil alimente un pot commun.
+                Ces fonds financent les briques qui nous manquent encore pour
+                rendre chacun plus autonome — outils libres, ressources
+                partagées.
               </p>
               <Link
                 to="/pot"
@@ -151,10 +166,10 @@ function LandingPage() {
           <div className="mx-auto max-w-4xl text-center">
             <p className="label text-text/50">L'idée fixe</p>
             <p className="font-heading mt-8 text-4xl uppercase leading-tight sm:text-6xl">
-              Le web était un{' '}
-              <span className="text-accent-primary">commun</span>.
+              Reprendre ses capacités, une à une.
               <br />
-              Il peut le redevenir.
+              Pour un monde plus{' '}
+              <span className="text-accent-primary">pacifique</span>.
             </p>
           </div>
         </div>

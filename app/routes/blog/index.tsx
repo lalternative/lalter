@@ -20,7 +20,7 @@ function BlogIndex() {
             <p className="label opacity-80">À paraître</p>
             <p className="font-heading mt-8 text-4xl uppercase leading-tight sm:text-6xl">
               « Une revue lente, écrite à plusieurs mains, sur ce que veut
-              dire faire du logiciel en Europe aujourd'hui. »
+              dire reprendre la main sur ses outils aujourd'hui. »
             </p>
           </div>
         </div>
@@ -30,10 +30,10 @@ function BlogIndex() {
         <div className="mx-auto w-full max-w-3xl px-6 py-20 sm:py-28">
           <div className="prose-editorial text-text/85">
             <p>
-              La revue de L'Alter ouvrira ses pages dans les prochains mois.
-              On y publiera des textes courts, denses, sur la pratique du
-              logiciel : choix d'infrastructure, économie des petites
-              équipes, dépendances, souveraineté concrète.
+              La revue de Capacific ouvrira ses pages dans les prochains mois.
+              On y publiera des textes courts, denses, sur le pouvoir d'agir
+              concret : tenir ses comptes, se faire entendre, décider de ses
+              placements, garder la main sur son savoir.
             </p>
             <p>
               Pas de hot takes, pas de classements, pas de tendances. Une

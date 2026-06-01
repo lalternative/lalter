@@ -28,7 +28,7 @@ const tiles: Tile[] = [
     fg: 'text-text',
   },
   {
-    label: 'Apps participantes',
+    label: 'Outils participants',
     value: '4',
     hint: 'Au lancement',
     bg: 'bg-accent-secondary',
@@ -56,7 +56,7 @@ function PotPage() {
             commun
           </h1>
           <p className="chapeau mt-10 max-w-2xl">
-            Une partie de ce que gagne chaque app revient au collectif. Les
+            Une partie de ce que gagne chaque outil revient au pot commun. Les
             chiffres ci-dessous sont publics et le resteront.
           </p>
         </div>
@@ -93,11 +93,10 @@ function PotPage() {
           </h2>
           <div className="prose-editorial mt-10 text-text/85">
             <p>
-              Chaque app du collectif reverse une fraction de ses revenus
-              dans un pot commun. Ces fonds financent des briques numériques
-              européennes manquantes : bibliothèques open source,
-              infrastructures partagées, outils communs dont nous avons tous
-              besoin et que personne ne maintient.
+              Chaque outil reverse une fraction de ses revenus dans un pot
+              commun. Ces fonds financent les briques qui manquent encore pour
+              rendre chacun plus capable : outils libres, ressources
+              partagées, fondations que personne ne finance aujourd'hui.
             </p>
             <p>
               Le pourcentage exact, la liste des projets soutenus et
@@ -107,8 +106,9 @@ function PotPage() {
             </p>
             <p>
               Le pot commun n'est pas un acte militant. C'est un calcul
-              simple : nos apps reposent sur des fondations qu'il faut bien
-              que quelqu'un entretienne. Autant que ce soit nous, ensemble.
+              simple : reprendre ses capacités suppose des outils, et ces
+              outils tiennent sur des fondations qui ne se financent pas
+              seules. Une part des revenus s'en charge, directement.
             </p>
           </div>
         </div>

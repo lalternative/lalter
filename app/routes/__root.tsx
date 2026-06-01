@@ -13,11 +13,11 @@ export const Route = createRootRoute({
     meta: [
       { charSet: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
-      { title: "L'Alter" },
+      { title: 'Capacific' },
       {
         name: 'description',
         content:
-          "L'Alter — collectif d'apps européennes pour un digital commun et souverain.",
+          'Capacific — des outils sobres pour reprendre le pouvoir d\'agir : connaissance, technique, création, financement, communication. On en est capable.',
       },
     ],
     links: [

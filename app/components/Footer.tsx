@@ -8,11 +8,11 @@ export function Footer() {
         <div className="grid gap-10 sm:grid-cols-12">
           <div className="sm:col-span-6">
             <p className="font-heading text-4xl leading-none sm:text-5xl">
-              L'ALTER
+              CAPACIFIC
             </p>
             <p className="mt-4 max-w-sm text-base text-text/70">
-              Un collectif européen pour un digital commun, partagé,
-              souverain.
+              Des outils sobres pour reprendre le pouvoir d'agir.
+              Parce qu'on en est capable.
             </p>
           </div>
 
@@ -21,7 +21,7 @@ export function Footer() {
             <ul className="mt-4 space-y-2 text-base">
               <li>
                 <Link to="/apps" className="hover:text-accent-primary">
-                  Apps
+                  Capacités
                 </Link>
               </li>
               <li>
@@ -47,10 +47,10 @@ export function Footer() {
             <ul className="mt-4 space-y-2 text-base">
               <li>
                 <a
-                  href="mailto:contact@lalter.fr"
+                  href="mailto:contact@capacific.fr"
                   className="hover:text-accent-primary"
                 >
-                  contact@lalter.fr
+                  contact@capacific.fr
                 </a>
               </li>
             </ul>
@@ -59,7 +59,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col gap-2 border-t border-text/15 pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="label text-text/60">№ 01 — {year}</p>
-          <p className="label text-text/60">Édité depuis l'Europe</p>
+          <p className="label text-text/60">Fait pour vous rendre capable</p>
         </div>
       </div>
     </footer>
