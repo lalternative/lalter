@@ -1,6 +1,6 @@
-# Capacific
+# L'Alter
 
-Landing + blog + dashboard for Capacific — European apps that put the power to act back in your hands (Synthiz, Skalpai, Spore, NATS Dash).
+Landing + blog + dashboard for L'Alter — sober tools to take back the power to act, organ by organ (Synthiz, Skalpai, Spore, NATS Dash).
 
 Static TanStack Start site. No backend.
 

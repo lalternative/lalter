@@ -50,7 +50,7 @@ function LandingPage() {
           </div>
 
           <h1 className="display-xxl mt-8 sm:mt-10">
-            Capac<span className="text-accent-primary">ific</span>
+            L'<span className="text-accent-primary">Alter</span>
           </h1>
 
           <div className="mt-10 grid gap-10 sm:mt-14 sm:grid-cols-12">
@@ -62,7 +62,7 @@ function LandingPage() {
             <div className="sm:col-span-4 sm:col-start-9 sm:self-end">
               <p className="label text-text/60">Au sommaire</p>
               <ul className="mt-3 space-y-1 text-base">
-                <li>— Cinq capacités à reprendre</li>
+                <li>— Cinq organes à reprendre</li>
                 <li>— Un pot commun, transparent</li>
                 <li>— Une revue à venir</li>
               </ul>
@@ -71,11 +71,11 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* CAPACITÉS — asymmetric editorial cards */}
+      {/* ORGANES — asymmetric editorial cards */}
       <section className="border-b-2 border-text">
         <div className="mx-auto w-full max-w-7xl px-6 py-20 sm:py-28">
           <div className="flex items-baseline justify-between gap-6">
-            <h2 className="display-lg">Les capacités</h2>
+            <h2 className="display-lg">Les organes</h2>
             <Link
               to="/apps"
               className="label text-accent-primary hover:underline"
@@ -168,8 +168,8 @@ function LandingPage() {
             <p className="font-heading mt-8 text-4xl uppercase leading-tight sm:text-6xl">
               Reprendre ses capacités, une à une.
               <br />
-              Pour un monde plus{' '}
-              <span className="text-accent-primary">pacifique</span>.
+              La capacité de tout{' '}
+              <span className="text-accent-primary">changer</span>.
             </p>
           </div>
         </div>

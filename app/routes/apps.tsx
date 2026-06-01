@@ -68,12 +68,13 @@ function AppsPage() {
       {/* Title block */}
       <section className="border-b-2 border-text">
         <div className="mx-auto w-full max-w-7xl px-6 py-20 sm:py-28">
-          <p className="label text-text/60">Les capacités — № 01</p>
-          <h1 className="display-xl mt-6">Les capacités</h1>
+          <p className="label text-text/60">Les organes — № 01</p>
+          <h1 className="display-xl mt-6">Les organes</h1>
           <p className="chapeau mt-8 max-w-2xl">
             Des idées au financement, du faire-exister au se-faire-connaître :
-            les capacités qu'on peut reprendre soi-même. Pour chacune, un outil
-            sobre qui vous en rend capable — rien qui décide à votre place.
+            les organes du pouvoir d'agir, qu'on peut reprendre un à un. Pour
+            chacun, un outil sobre qui vous en rend capable — rien qui décide à
+            votre place.
           </p>
         </div>
       </section>

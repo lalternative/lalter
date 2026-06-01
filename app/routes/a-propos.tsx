@@ -12,7 +12,7 @@ function AProposPage() {
           <p className="label text-text/60">Le collectif</p>
           <h1 className="display-xl mt-6">À propos</h1>
           <p className="chapeau mt-10 max-w-2xl">
-            Capacific réunit des outils sobres qui vous donnent les moyens
+            L'Alter réunit des outils sobres qui vous donnent les moyens
             d'agir par vous-même — et mutualisent une partie de leurs revenus
             dans un pot commun pour financer les briques qui manquent encore.
           </p>
@@ -28,7 +28,7 @@ function AProposPage() {
           <div className="prose-editorial mt-10 text-text/85">
             <p>
               La plupart des outils décident à votre place : ils simplifient
-              en vous retirant la main. Capacific part de l'idée inverse —
+              en vous retirant la main. L'Alter part de l'idée inverse —
               vous savez ce que vous faites, il suffit qu'on vous en donne les
               moyens.
             </p>
@@ -63,10 +63,10 @@ function AProposPage() {
                 seule adresse.
               </p>
               <a
-                href="mailto:contact@capacific.fr"
+                href="mailto:contact@lalter.fr"
                 className="mt-8 font-heading text-3xl uppercase tracking-tight text-accent-primary hover:underline sm:text-4xl"
               >
-                contact@capacific.fr
+                contact@lalter.fr
               </a>
             </div>
           </div>

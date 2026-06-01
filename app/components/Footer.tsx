@@ -8,7 +8,7 @@ export function Footer() {
         <div className="grid gap-10 sm:grid-cols-12">
           <div className="sm:col-span-6">
             <p className="font-heading text-4xl leading-none sm:text-5xl">
-              CAPACIFIC
+              L'ALTER
             </p>
             <p className="mt-4 max-w-sm text-base text-text/70">
               Des outils sobres pour reprendre le pouvoir d'agir.
@@ -21,7 +21,7 @@ export function Footer() {
             <ul className="mt-4 space-y-2 text-base">
               <li>
                 <Link to="/apps" className="hover:text-accent-primary">
-                  Capacités
+                  Organes
                 </Link>
               </li>
               <li>
@@ -47,10 +47,10 @@ export function Footer() {
             <ul className="mt-4 space-y-2 text-base">
               <li>
                 <a
-                  href="mailto:contact@capacific.fr"
+                  href="mailto:contact@lalter.fr"
                   className="hover:text-accent-primary"
                 >
-                  contact@capacific.fr
+                  contact@lalter.fr
                 </a>
               </li>
             </ul>

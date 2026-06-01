@@ -13,11 +13,11 @@ export const Route = createRootRoute({
     meta: [
       { charSet: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
-      { title: 'Capacific' },
+      { title: "L'Alter" },
       {
         name: 'description',
         content:
-          'Capacific — des outils sobres pour reprendre le pouvoir d\'agir : connaissance, technique, création, financement, communication. On en est capable.',
+          "L'Alter — des outils sobres pour reprendre le pouvoir d'agir : connaissance, technique, création, financement, communication. On en est capable.",
       },
     ],
     links: [

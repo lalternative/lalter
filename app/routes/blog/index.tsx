@@ -30,7 +30,7 @@ function BlogIndex() {
         <div className="mx-auto w-full max-w-3xl px-6 py-20 sm:py-28">
           <div className="prose-editorial text-text/85">
             <p>
-              La revue de Capacific ouvrira ses pages dans les prochains mois.
+              La revue de L'Alter ouvrira ses pages dans les prochains mois.
               On y publiera des textes courts, denses, sur le pouvoir d'agir
               concret : tenir ses comptes, se faire entendre, décider de ses
               placements, garder la main sur son savoir.
