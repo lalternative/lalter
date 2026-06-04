@@ -1,0 +1,18 @@
+runner:
+  registry: rg.fr-par.scw.cloud/lalter
+  registry_auth_secret: scw-registry-credentials
+
+  toolchain:
+    node: "24.16.0"
+    pnpm: "10.27.0"
+
+  packages:
+    - git
+    - ca-certificates
+    - curl
+
+  env:
+    GOPRIVATE: github.com/digstack
+
+  secrets:
+    - GITHUB_TOKEN

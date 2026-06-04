@@ -1,0 +1,22 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/digstack/skalpai/main/apps/sklp/runner/devstack.schema.json
+#
+# Local dev stack — `sklp dev stack`. lalter is a single TanStack Start (SSR)
+# front-end, no backend or database. One service: web.
+
+version: 1
+kind: devstack
+name: stack
+env_files:
+  - .env
+
+services:
+  web:
+    # MUST bind 0.0.0.0: the probe + host ingress reach web by its bridge IP, so
+    # vite's default localhost-only bind is unreachable. ports: opens 3120 →
+    # http://localhost:3120.
+    run: pnpm exec vite dev --host 0.0.0.0 --port 3120
+    ports:
+      - "3120:3120"
+    ready:
+      tcp: "0.0.0.0:3120"
+      timeout: 45s

@@ -1,0 +1,22 @@
+version: 1
+kind: pipeline
+name: ci
+
+toolchain:
+  node: "24.16.0"
+  pnpm: "10.27.0"
+
+scopes:
+  web:
+    - "app/**"
+    - "public/**"
+    - "vite.config.ts"
+    - "package.json"
+    - "pnpm-lock.yaml"
+    - "tsconfig.json"
+
+steps:
+  - name: web-build
+    scope: [web]
+    tools: [node, pnpm]
+    run: pnpm build
