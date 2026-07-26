@@ -1,10 +1,10 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/digstack/skalpai/main/apps/sklp/pipeline/pipeline.schema.json
 version: 1
 kind: pipeline
 name: ci
 
-toolchain:
-  node: "24.16.0"
-  pnpm: "10.27.0"
+# Tool versions come from runner.toolchain in .sklp/space.yaml (the execution
+# environment). A top-level `tools:` here would only re-pin or add to it.
 
 scopes:
   web:

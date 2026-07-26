@@ -1,4 +1,5 @@
 node_modules
+.pnpm-store
 .output
 .nitro
 .tanstack
@@ -10,3 +11,8 @@ dist
 .env.local
 .vite
 app/routeTree.gen.ts
+
+# sklp runtime artefacts — local CAS cache + per-run pipeline logs
+.sklp/cache/
+.sklp/logs/
+.sklp/run/

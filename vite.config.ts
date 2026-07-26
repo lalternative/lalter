@@ -5,6 +5,13 @@ import viteReact from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
+  server: {
+    watch: {
+      // pnpm falls back to a repo-local store when $HOME is confined (sklp
+      // space). Its symlink farm makes the watcher crash with ELOOP.
+      ignored: ['**/.pnpm-store/**'],
+    },
+  },
   plugins: [
     tsconfigPaths({ projects: ['./tsconfig.json'] }),
     tailwindcss(),
