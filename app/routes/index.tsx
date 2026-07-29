@@ -8,6 +8,23 @@ type Capacite = {
   name: string
   tagline: string
   kicker: string
+  /** True once an organ has a shipped tool. Tools are named on /outils, not here. */
+  shipped?: boolean
+  /** Shipped but invite-only: shown as "Sur invitation", not "Disponible". */
+  beta?: boolean
+}
+
+/** Shared "Disponible →" / "En cours" state line for an organ tile. */
+function OrganeStatus({ shipped, beta }: { shipped?: boolean; beta?: boolean }) {
+  if (!shipped && !beta) return <p className="label mt-6 opacity-50">En cours</p>
+  return (
+    <Link
+      to="/outils"
+      className="label mt-6 inline-flex w-fit items-center gap-2 border-b-2 border-current pb-1 hover:opacity-70"
+    >
+      {beta ? 'Sur invitation' : 'Disponible'} <span aria-hidden>→</span>
+    </Link>
+  )
 }
 
 const capacites: Capacite[] = [
@@ -15,11 +32,13 @@ const capacites: Capacite[] = [
     name: 'Connaissance',
     tagline: 'Avoir les idées, garder la main sur son savoir.',
     kicker: 'Le point de départ',
+    shipped: true,
   },
   {
     name: 'Technique',
     tagline: 'Tenir ses outils sans dépendre de personne.',
     kicker: 'La machine',
+    shipped: true,
   },
   {
     name: 'Création',
@@ -30,11 +49,13 @@ const capacites: Capacite[] = [
     name: 'Financement',
     tagline: 'Financer ce qu\'on entreprend, sans intermédiaire qui prélève.',
     kicker: 'Le nerf',
+    beta: true,
   },
   {
     name: 'Communication',
     tagline: 'Se faire connaître par ses propres moyens.',
     kicker: 'Se faire entendre',
+    shipped: true,
   },
 ]
 
@@ -92,6 +113,7 @@ function LandingPage() {
                 {capacites[0].name}
               </h3>
               <p className="chapeau mt-6 max-w-md">{capacites[0].tagline}</p>
+              <OrganeStatus shipped={capacites[0].shipped} />
             </article>
 
             <article className="col-span-1 bg-bg p-8 sm:col-span-5 sm:p-12">
@@ -100,6 +122,7 @@ function LandingPage() {
                 {capacites[1].name}
               </h3>
               <p className="mt-6 text-base text-text/80">{capacites[1].tagline}</p>
+              <OrganeStatus shipped={capacites[1].shipped} />
             </article>
 
             <article className="col-span-1 bg-accent-secondary p-8 text-bg sm:col-span-5 sm:p-12">
@@ -108,6 +131,7 @@ function LandingPage() {
                 {capacites[2].name}
               </h3>
               <p className="mt-6 text-base opacity-90">{capacites[2].tagline}</p>
+              <OrganeStatus shipped={capacites[2].shipped} />
             </article>
 
             <article className="col-span-1 bg-warm p-8 sm:col-span-7 sm:p-12">
@@ -116,6 +140,7 @@ function LandingPage() {
                 {capacites[3].name}
               </h3>
               <p className="chapeau mt-6 max-w-md">{capacites[3].tagline}</p>
+              <OrganeStatus shipped={capacites[3].shipped} beta={capacites[3].beta} />
             </article>
 
             <article className="col-span-1 bg-text p-8 text-bg sm:col-span-12 sm:p-12">
@@ -126,6 +151,7 @@ function LandingPage() {
               <p className="chapeau mt-6 max-w-xl opacity-90">
                 {capacites[4].tagline}
               </p>
+              <OrganeStatus shipped={capacites[4].shipped} />
             </article>
           </div>
         </div>
@@ -138,16 +164,17 @@ function LandingPage() {
             <div className="sm:col-span-7">
               <p className="label opacity-70">Le pot commun</p>
               <h2 className="display-xl mt-6">
-                Mutualiser <br />
-                pour bâtir.
+                Chaque centime <br />
+                revient ici.
               </h2>
             </div>
             <div className="flex flex-col justify-end sm:col-span-5">
               <p className="chapeau opacity-90">
-                Une part des revenus de chaque outil alimente un pot commun.
-                Ces fonds financent les briques qui nous manquent encore pour
-                rendre chacun plus autonome — outils libres, ressources
-                partagées.
+                Une part des revenus de chaque outil alimente un pot commun,
+                qui sert à reforger nos propres moyens numériques. Une idée ne
+                se concrétise qu'en la finançant : plutôt que de lever des
+                fonds, on reprend la main sur des revenus qui nous échappent
+                déjà.
               </p>
               <Link
                 to="/pot"
