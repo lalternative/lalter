@@ -1,7 +1,13 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { Link, createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/apps')({
   component: AppsPage,
+  head: () => ({
+    meta: [
+      { title: "Les organes — L'Alter" },
+      { name: 'description', content: "Les cinq organes du pouvoir d'agir : connaissance, technique, création, financement, communication. Un outil sobre pour chacun." },
+    ],
+  }),
 })
 
 type Capacite = {
@@ -10,6 +16,10 @@ type Capacite = {
   kicker: string
   detail: string
   accent: 'primary' | 'secondary' | 'warm' | 'paper'
+  /** True once an organ has a shipped tool. Tools are named on /outils, not here. */
+  shipped?: boolean
+  /** Shipped but invite-only: shown as "Sur invitation", not "Disponible". */
+  beta?: boolean
 }
 
 const capacites: Capacite[] = [
@@ -20,6 +30,7 @@ const capacites: Capacite[] = [
     detail:
       "Une mémoire qui vous appartient : vos notes, vos sources, vos idées, organisées par vous. Le point de départ — sans idées, rien ne commence.",
     accent: 'primary',
+    shipped: true,
   },
   {
     name: 'Technique',
@@ -28,6 +39,7 @@ const capacites: Capacite[] = [
     detail:
       "Voir ce que fait votre infra, sans dépendre d'une équipe ou d'un budget que vous n'avez pas. Garder la main sur la machine plutôt que la subir.",
     accent: 'paper',
+    shipped: true,
   },
   {
     name: 'Création',
@@ -44,6 +56,7 @@ const capacites: Capacite[] = [
     detail:
       "Deux briques : lever des fonds et investir, et encaisser vos paiements par vos propres moyens, sans dépendre d'un intermédiaire qui prélève sa part.",
     accent: 'warm',
+    beta: true,
   },
   {
     name: 'Communication',
@@ -52,6 +65,7 @@ const capacites: Capacite[] = [
     detail:
       "Vos messages partent de chez vous, sans intermédiaire qui filtre ou monétise votre audience. Parler au monde sans demander la permission.",
     accent: 'paper',
+    shipped: true,
   },
 ]
 
@@ -109,6 +123,17 @@ function AppsPage() {
                 >
                   <p className="chapeau">{capacite.description}</p>
                   <p className="mt-6 text-base opacity-80">{capacite.detail}</p>
+                  {capacite.shipped || capacite.beta ? (
+                    <Link
+                      to="/outils"
+                      className="label mt-8 inline-flex w-fit items-center gap-2 border-b-2 border-current pb-1 hover:opacity-70"
+                    >
+                      {capacite.beta ? 'Sur invitation' : 'Disponible'}{' '}
+                      <span aria-hidden>→</span>
+                    </Link>
+                  ) : (
+                    <p className="label mt-8 opacity-50">En cours</p>
+                  )}
                 </div>
               </div>
             </div>

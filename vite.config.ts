@@ -26,9 +26,11 @@ export default defineConfig({
       pages: [
         { path: '/' },
         { path: '/apps' },
+        { path: '/outils' },
         { path: '/pot' },
         { path: '/blog' },
         { path: '/a-propos' },
+        { path: '/contact' },
       ],
     }),
     viteReact(),

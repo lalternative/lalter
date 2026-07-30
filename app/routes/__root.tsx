@@ -19,6 +19,11 @@ export const Route = createRootRoute({
         content:
           "L'Alter — des outils sobres pour reprendre le pouvoir d'agir : connaissance, technique, création, financement, communication. On en est capable.",
       },
+      // Social previews. Per-route head() overrides title/description above.
+      { property: 'og:site_name', content: "L'Alter" },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:locale', content: 'fr_FR' },
+      { name: 'twitter:card', content: 'summary_large_image' },
     ],
     links: [
       { rel: 'stylesheet', href: appCss },

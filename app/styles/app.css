@@ -80,12 +80,28 @@ h4 {
 
 /* Reading column for long-form */
 .prose-editorial {
-  font-size: 1.0625rem;
-  line-height: 1.7;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  /* ~68 characters per line — the comfortable range for sustained reading. */
+  max-width: 38rem;
 }
 
 .prose-editorial p + p {
-  margin-top: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+/* A heading belongs to what follows it, not to what precedes it. */
+.prose-editorial h2 + p,
+.prose-editorial h2 + ul,
+.prose-editorial h2 + blockquote,
+.prose-editorial h2 + figure {
+  margin-top: 0;
+}
+
+/* Tables carry columns, so they get the full column width the prose forgoes. */
+.prose-editorial figure {
+  max-width: none;
+  width: 100%;
 }
 
 /* Magazine rule */

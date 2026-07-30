@@ -2,9 +2,11 @@ import { Link } from '@tanstack/react-router'
 
 const navLinks = [
   { to: '/apps', label: 'Organes' },
+  { to: '/outils', label: 'Outils' },
   { to: '/pot', label: 'Pot commun' },
   { to: '/blog', label: 'Revue' },
   { to: '/a-propos', label: 'À propos' },
+  { to: '/contact', label: 'Contact' },
 ] as const
 
 export function Header() {

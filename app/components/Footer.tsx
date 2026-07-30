@@ -39,6 +39,11 @@ export function Footer() {
                   À propos
                 </Link>
               </li>
+              <li>
+                <Link to="/contact" className="hover:text-accent-primary">
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 

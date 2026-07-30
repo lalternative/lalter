@@ -1,7 +1,13 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { Link, createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/a-propos')({
   component: AProposPage,
+  head: () => ({
+    meta: [
+      { title: "À propos — L'Alter" },
+      { name: 'description', content: "L'Alter réunit des outils sobres qui vous donnent les moyens d'agir par vous-même." },
+    ],
+  }),
 })
 
 function AProposPage() {
@@ -59,15 +65,14 @@ function AProposPage() {
             <div className="flex flex-col justify-end sm:col-span-7">
               <p className="chapeau opacity-90">
                 Vous vous reconnaissez dans cette démarche, ou vous voulez
-                juste discuter ? Une
-                seule adresse.
+                juste discuter ? On lit tout.
               </p>
-              <a
-                href="mailto:contact@lalter.fr"
-                className="mt-8 font-heading text-3xl uppercase tracking-tight text-accent-primary hover:underline sm:text-4xl"
+              <Link
+                to="/contact"
+                className="label mt-8 inline-flex w-fit items-center gap-3 border-2 border-bg px-6 py-3 hover:bg-bg hover:text-text"
               >
-                contact@lalter.fr
-              </a>
+                Nous écrire <span aria-hidden>→</span>
+              </Link>
             </div>
           </div>
         </div>

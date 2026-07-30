@@ -16,3 +16,6 @@ app/routeTree.gen.ts
 .sklp/cache/
 .sklp/logs/
 .sklp/run/
+
+# scratch space
+tmp/

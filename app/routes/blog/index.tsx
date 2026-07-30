@@ -1,7 +1,19 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { Link, createFileRoute } from '@tanstack/react-router'
+import { articles } from '@/content/articles'
+import { Inscription } from '@/components/Inscription'
 
 export const Route = createFileRoute('/blog/')({
   component: BlogIndex,
+  head: () => ({
+    meta: [
+      { title: "La revue — L'Alter" },
+      {
+        name: 'description',
+        content:
+          "Des textes courts et denses sur le pouvoir d'agir concret : garder la main sur son savoir, ses outils, sa parole.",
+      },
+    ],
+  }),
 })
 
 function BlogIndex() {
@@ -15,9 +27,9 @@ function BlogIndex() {
       </section>
 
       <section className="bg-accent-primary text-bg">
-        <div className="mx-auto w-full max-w-7xl px-6 py-32 sm:py-44">
+        <div className="mx-auto w-full max-w-7xl px-6 py-24 sm:py-32">
           <div className="mx-auto max-w-4xl">
-            <p className="label opacity-80">À paraître</p>
+            <p className="label opacity-80">Le propos</p>
             <p className="font-heading mt-8 text-4xl uppercase leading-tight sm:text-6xl">
               « Une revue lente, écrite à plusieurs mains, sur ce que veut
               dire reprendre la main sur ses outils aujourd'hui. »
@@ -26,24 +38,45 @@ function BlogIndex() {
         </div>
       </section>
 
+      {/* Articles */}
       <section>
-        <div className="mx-auto w-full max-w-3xl px-6 py-20 sm:py-28">
-          <div className="prose-editorial text-text/85">
-            <p>
-              La revue de L'Alter ouvrira ses pages dans les prochains mois.
-              On y publiera des textes courts, denses, sur le pouvoir d'agir
-              concret : tenir ses comptes, se faire entendre, décider de ses
-              placements, garder la main sur son savoir.
-            </p>
-            <p>
-              Pas de hot takes, pas de classements, pas de tendances. Une
-              cadence d'éditeur — quelques numéros par an, signés par les
-              gens qui font.
-            </p>
-          </div>
-          <div className="mt-12 border-t-2 border-text pt-6">
-            <p className="label text-text/60">Premier numéro — à venir</p>
-          </div>
+        <div className="mx-auto w-full max-w-7xl px-6 py-16 sm:py-24">
+          <ul className="border-t-2 border-text">
+            {articles.map((article) => (
+              <li key={article.slug} className="border-b-2 border-text">
+                <Link
+                  to="/blog/$slug"
+                  params={{ slug: article.slug }}
+                  className="group grid gap-6 py-10 sm:grid-cols-12 sm:py-14"
+                >
+                  <div className="sm:col-span-3">
+                    <p className="label text-accent-primary">
+                      Organe {article.organe}
+                    </p>
+                    <p className="label mt-2 text-text/50">{article.lecture}</p>
+                  </div>
+                  <div className="sm:col-span-9">
+                    <h2 className="font-heading text-3xl uppercase leading-tight group-hover:text-accent-primary sm:text-5xl">
+                      {article.titre}
+                    </h2>
+                    <p className="mt-4 max-w-2xl text-base text-text/75">
+                      {article.chapeau}
+                    </p>
+                    <p className="label mt-6 inline-flex items-center gap-2 text-text/60 group-hover:text-accent-primary">
+                      Lire <span aria-hidden>→</span>
+                    </p>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Sign-up */}
+      <section className="border-t-2 border-text">
+        <div className="mx-auto w-full max-w-3xl px-6 py-16 sm:py-20">
+          <Inscription />
         </div>
       </section>
     </div>
