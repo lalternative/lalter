@@ -214,46 +214,72 @@ export const articles: Article[] = [
     ],
   },
   {
-    slug: 'garder-la-main-sur-ce-quon-apprend',
-    titre: "Garder la main sur ce qu'on apprend",
+    slug: 'attraper-les-mots-avant-quils-se-perdent',
+    titre: "Attraper les mots avant qu'ils se perdent",
     chapeau:
-      "On consomme plus d'information que jamais, et on en retient de moins en moins. Le problème n'est pas la quantité : c'est qu'on ne possède rien de ce qu'on lit.",
+      "Une conférence de deux heures, un podcast écouté en marchant, un rapport parcouru en diagonale. Tout a été dit, rien n'est retrouvable. Le son se dissipe ; le texte, lui, reste.",
     organe: 'Connaissance',
     outil: 'Synthiz',
     outilUrl: 'https://synthiz.com',
-    date: '2026-07-29',
-    lecture: '4 min',
+    date: '2026-07-30',
+    lecture: '5 min',
     blocs: [
       {
         type: 'p',
-        text: "Une vidéo de deux heures vue la semaine dernière. Un podcast écouté en marchant. Un rapport parcouru en diagonale. Trois semaines plus tard, il reste une impression vague et la certitude d'avoir déjà croisé l'argument quelque part — sans pouvoir dire où.",
+        text: "Quelqu'un a dit exactement ce qu'il vous fallait. C'était dans une conférence, un podcast, une réunion enregistrée. Vous vous rappelez l'idée, à peu près. La phrase, non. Et vous n'allez pas réécouter deux heures d'audio pour retrouver quarante secondes.",
       },
       {
         type: 'p',
-        text: "Ce n'est pas un défaut de mémoire. C'est que ces contenus ne laissent aucune trace exploitable. Ils passent par des plateformes qui les gardent, les indexent pour elles, et ne vous rendent rien de réutilisable.",
-      },
-      { type: 'h2', text: 'Le texte est la seule matière qui se travaille' },
-      {
-        type: 'p',
-        text: "Une vidéo ne se cherche pas, ne se cite pas, ne se recoupe pas avec un autre document. Transcrite, elle devient du texte — et le texte se fouille, s'annote, se relie. C'est la différence entre avoir vu quelque chose et pouvoir s'en servir.",
+        text: "L'information a été produite, diffusée, entendue — et elle est perdue. Pas supprimée : inaccessible, ce qui revient au même.",
       },
       {
         type: 'p',
-        text: "C'est le point de départ de Synthiz : transformer ce que vous consultez en matière que vous possédez. Vos sources, vos notes, vos recoupements, organisés par vous plutôt que par l'algorithme d'une plateforme.",
+        text: "Ce n'est pas un défaut de mémoire. Ces contenus ne laissent aucune trace exploitable. Ils passent par des plateformes qui les gardent, les indexent pour elles, et ne vous rendent rien de réutilisable.",
       },
-      { type: 'h2', text: "Ce que ça change concrètement" },
+      { type: 'h2', text: 'Le son ne se cherche pas' },
       {
-        type: 'liste',
-        items: [
-          "Retrouver une phrase entendue dans un podcast il y a six mois",
-          "Recouper trois sources qui disent la même chose autrement",
-          "Citer précisément au lieu de paraphraser de mémoire",
-          "Garder ce qui compte quand la vidéo est supprimée",
-        ],
+        type: 'p',
+        text: "Un fichier audio est un bloc opaque. On ne peut pas le fouiller, en citer un passage, le recouper avec un autre document, ni vérifier qui a dit quoi. On peut seulement le réécouter, du début à la fin, à la vitesse où il a été enregistré.",
+      },
+      {
+        type: 'p',
+        text: "Le texte fait l'inverse. Il se cherche, s'annote, se cite, se relie. Il tient dans un index. Il survit à la disparition de la vidéo dont il est issu.",
       },
       {
         type: 'quote',
-        text: "Sans idées, rien ne commence. Mais des idées qu'on ne retrouve pas ne servent à rien.",
+        text: "Transcrire n'est pas convertir un format. C'est faire passer une parole du statut de souvenir à celui de matière.",
+      },
+      { type: 'h2', text: 'Attraper ne suffit pas' },
+      {
+        type: 'p',
+        text: "Un transcript isolé ne vaut pas grand-chose. Mille pages de texte brut posent le même problème que l'audio dont elles sortent : on ne sait pas où chercher.",
+      },
+      {
+        type: 'p',
+        text: "Ce qui rend une source utile, c'est ce qui vient après. Retrouver un passage sans se rappeler où on l'a lu. Rapprocher deux interventions qui disent la même chose autrement. Distinguer ce qu'on a soi-même noté de ce qu'on a seulement consulté.",
+      },
+      {
+        type: 'p',
+        text: "C'est ce que fait Synthiz : transformer ce que vous consultez en matière que vous possédez. Vos sources, vos notes, vos recoupements, organisés par vous plutôt que par l'algorithme d'une plateforme.",
+      },
+      { type: 'h2', text: 'Ce que ça change concrètement' },
+      {
+        type: 'liste',
+        items: [
+          'Retrouver une phrase entendue dans un podcast il y a six mois',
+          'Recouper trois sources qui disent la même chose autrement',
+          'Citer précisément au lieu de paraphraser de mémoire',
+          'Garder ce qui compte quand la vidéo, elle, est supprimée',
+        ],
+      },
+      {
+        type: 'p',
+        text: "Rien de spectaculaire. Simplement des idées qui ne se perdent plus.",
+      },
+      { type: 'h2', text: "Ce que ce n'est pas" },
+      {
+        type: 'p',
+        text: "Ni un outil de veille automatique, ni un assistant qui lit à votre place. La lecture, le tri et le jugement restent votre travail. Synthiz garantit seulement que ce que vous avez lu reste atteignable.",
       },
       {
         type: 'p',
@@ -262,152 +288,139 @@ export const articles: Article[] = [
     ],
   },
   {
-    slug: 'envoyer-ses-emails-depuis-chez-soi',
-    titre: 'Envoyer ses emails depuis chez soi',
+    slug: 'donner-a-vos-systemes-acces-a-ce-qui-se-dit',
+    titre: "Donner à vos systèmes accès à ce qui se dit",
     chapeau:
-      "L'envoi d'emails transactionnels est concentré entre les mains de quelques acteurs, presque tous américains. Quand l'un d'eux décide que vous ne lui convenez plus, vous ne discutez pas.",
-    organe: 'Communication',
-    outil: 'Spore',
-    outilUrl: 'https://sporee.fr',
-    date: '2026-07-29',
-    lecture: '4 min',
-    blocs: [
-      {
-        type: 'p',
-        text: "Un email de confirmation de commande, une réinitialisation de mot de passe, une facture : rien de tout cela n'est du marketing. C'est le fonctionnement de base d'un service. Et pourtant, c'est une brique qu'on loue le plus souvent à un tiers, sans forcément se demander ce qui se passe s'il change d'avis.",
-      },
-      {
-        type: 'p',
-        text: "Tant que tout va bien, la question ne se pose pas. Elle se pose le jour où le compte est suspendu sans préavis, où les tarifs changent, ou bien où le prestataire décide que votre secteur d'activité ne l'intéresse plus.",
-      },
-      { type: 'h2', text: 'La plupart des alternatives sont des revendeurs' },
-      {
-        type: 'p',
-        text: "Beaucoup de services d'envoi ne possèdent pas leur infrastructure : ce sont des couches posées sur celle d'un autre. Changer de fournisseur revient alors à changer de facture, pas de dépendance.",
-      },
-      {
-        type: 'p',
-        text: "Spore fonctionne autrement : l'infrastructure SMTP nous appartient. Vous rattachez vos domaines, générez vos identités DKIM, publiez vos enregistrements DNS et envoyez. Les domaines expéditeurs sont les vôtres.",
-      },
-      { type: 'h2', text: 'Ce que ça suppose d\'accepter' },
-      {
-        type: 'p',
-        text: "Tenir sa propre infrastructure d'envoi demande du sérieux : réputation d'IP, conformité DKIM et SPF, surveillance de la délivrabilité. Ce n'est pas gratuit en attention. C'est le prix de ne dépendre de personne.",
-      },
-      {
-        type: 'quote',
-        text: "Vos messages partent de chez vous, sans intermédiaire qui filtre ou monétise votre audience.",
-      },
-      {
-        type: 'p',
-        text: "Parler au monde sans demander la permission suppose de tenir le tuyau par lequel on parle.",
-      },
-    ],
-  },
-  {
-    slug: 'transcrire-par-api-ce-quon-paye-vraiment',
-    titre: "Transcrire par API : ce qu'on paye vraiment",
-    chapeau:
-      "Les grilles tarifaires des API de transcription sont lisibles. Ce qu'elles recouvrent l'est moins — en particulier sur la traduction, facturée jusqu'à quinze fois le prix d'une transcription.",
+      "Vos index, vos agents et vos analyses ne lisent que du texte. L'essentiel de ce qui se publie aujourd'hui est audio ou vidéo — et leur reste donc invisible.",
     organe: 'Connaissance',
     outil: 'Techtuel',
     outilUrl: 'https://techtuel.com',
-    date: '2026-07-29',
+    date: '2026-07-30',
     lecture: '5 min',
     blocs: [
       {
         type: 'p',
-        text: "Intégrer de la transcription dans un produit revient à choisir une API et à lire sa grille. Les prix affichés se ressemblent tous. Les écarts apparaissent ailleurs : dans ce qui est compté comme une opération supplémentaire.",
-      },
-      { type: 'h2', text: 'Le poste qui coûte, et celui qui rapporte' },
-      {
-        type: 'p',
-        text: "Sur une transcription, le seul coût variable sérieux est le modèle de reconnaissance vocale, facturé à la minute d'audio. Le reste — proxy, stockage, modèles de langue — pèse une fraction négligeable de la facture réelle.",
+        text: "Vous construisez un système qui exploite de l'information : un moteur de recherche interne, un index sémantique, un agent qui répond à partir de vos sources, un outil de veille. Tout cela fonctionne sur du texte.",
       },
       {
         type: 'p',
-        text: "Voici nos chiffres. Transcrire une heure d'audio nous coûte 0,046 €. Traduire cette même heure nous coûte 0,0047 € — dix fois moins. La traduction est un poste marginal, et c'est pourtant celui sur lequel les écarts de tarification sont les plus spectaculaires.",
-      },
-      { type: 'h2', text: 'Le comparatif' },
-      {
-        type: 'p',
-        text: "Prenons l'acteur dont la grille est la plus proche de la nôtre. Nous facturons tous les deux au crédit, et le nombre de crédits par opération est identique.",
-      },
-      {
-        type: 'tableau',
-        colonnes: ['Opération', 'Un acteur du marché', 'Techtuel'],
-        lignes: [
-          [
-            'Vidéo déjà sous-titrée',
-            '1 crédit',
-            '1 crédit, quelle que soit la durée',
-          ],
-          ['Transcription générée', '2 cr/min', '2 cr/min'],
-          ['Traduction', '30 cr/min', 'incluse'],
-        ],
-        accent: 2,
-        note: 'Tarifs publics relevés en juillet 2026.',
+        text: "Or une part croissante de ce qui compte dans votre domaine ne s'écrit plus. Elle se dit — en conférence, en podcast, en webinaire, en réunion enregistrée. Pour vos systèmes, cette matière n'existe pas.",
       },
       {
         type: 'p',
-        text: "La première ligne mérite qu'on s'y arrête : une vidéo déjà sous-titrée coûte 1 crédit chez nous, qu'elle dure six minutes ou trois heures. Comme la majorité des vidéos YouTube sont sous-titrées, c'est le cas le plus fréquent en usage réel — et le moins cher.",
+        text: "Ce n'est pas un problème de volume, mais d'angle mort. Vous indexez ce qui est facile à indexer, et vous concluez à partir de cet échantillon.",
+      },
+      { type: 'h2', text: 'Ce que ça coûte de ne pas les voir' },
+      {
+        type: 'p',
+        text: "Un agent interne qui ignore les réunions enregistrées répondra à côté sur la moitié des décisions prises. Une veille qui ne suit que les articles manquera ce qui se dit en conférence six mois avant d'être écrit. Un index documentaire qui saute les formations vidéo renvoie l'utilisateur vers une documentation qu'il a déjà lue.",
       },
       {
         type: 'p',
-        text: "Deux écarts se cachent derrière ces chiffres. Le premier : un crédit ne vaut pas la même chose des deux côtés.",
-      },
-      {
-        type: 'tableau',
-        colonnes: ['Offre', 'Prix', 'Crédits', 'Le crédit'],
-        lignes: [
-          ['Cet acteur — offre Pro', '17 $/mois', '3 000', '0,0057 $'],
-          ['Techtuel Pro', '5 €/mois', '2 000', '0,0025 €'],
-          ['Cet acteur — offre haute', '47 $/mois', '30 000', '0,0016 $'],
-          ['Techtuel Max', '12 €/mois', '10 000', '0,0012 €'],
-        ],
-        accent: 0,
-      },
-      {
-        type: 'p',
-        text: "Sur l'offre intermédiaire, la même transcription revient environ deux fois moins cher chez nous. Sur les gros volumes, l'écart se resserre : leur palier supérieur descend à 0,0016 $ le crédit, contre 0,0012 € chez nous. Nous restons devant, mais de peu.",
-      },
-      {
-        type: 'p',
-        text: "Autant le dire franchement : leur offre haute donne accès à trois fois plus de crédits que la nôtre. Au-delà de 10 000 crédits par mois, nous n'avons aujourd'hui rien à proposer.",
-      },
-      {
-        type: 'p',
-        text: "Le second écart est plus brutal : chez eux, traduire coûte quinze fois plus cher que transcrire. Une heure de vidéo leur revient à environ 10 $ à traduire, contre 0,68 $ à transcrire. Chez nous, la traduction n'est pas un poste facturable.",
-      },
-      { type: 'h2', text: 'Pourquoi nous ne la facturons pas' },
-      {
-        type: 'p',
-        text: "Parce qu'elle ne nous coûte presque rien : 0,0047 € l'heure. Une ligne de facturation pour ce montant ajouterait un compteur à surveiller, une règle à documenter et une question de plus au support — pour un revenu qui ne se voit pas dans les comptes.",
-      },
-      {
-        type: 'p',
-        text: "Il y a une raison plus importante encore : un tarif de traduction transforme le multilingue en variable de coût. On commence à se demander si telle langue vaut la dépense, on limite, on arbitre. Une facture qui ne bouge pas selon la langue supprime la question.",
+        text: "Dans chaque cas, le système paraît fonctionner. C'est ce qui rend l'angle mort coûteux : il ne produit pas d'erreur visible, seulement des réponses incomplètes.",
       },
       {
         type: 'quote',
-        text: "Même prix qu'ailleurs pour transcrire. La traduction en plus, sans supplément.",
+        text: "Un système ne peut raisonner que sur ce qu'il peut lire.",
+      },
+      { type: 'h2', text: "Pourquoi cette brique reste pénible" },
+      {
+        type: 'p',
+        text: "Techniquement, le sujet est résolu : les modèles de reconnaissance vocale sont bons et disponibles. La difficulté est opérationnelle, et c'est elle qui décourage.",
+      },
+      {
+        type: 'liste',
+        items: [
+          'Récupérer la source — formats multiples, plateformes changeantes, contenus supprimés',
+          'Faire tourner le modèle — machines, files d\'attente, reprises après échec',
+          'Absorber les erreurs — une source indisponible ne doit pas bloquer le lot',
+          'Nettoyer le résultat — un transcript brut s\'indexe mal',
+          'Maintenir tout cela dans le temps, sans que ce soit votre métier',
+        ],
       },
       {
         type: 'p',
-        text: "Ce n'est pas une offre de lancement, et rien n'est reporté sur un autre poste : nos coûts sont publiés, vous pouvez refaire le calcul.",
+        text: "Chaque étape est faisable. C'est leur addition qui coûte, et surtout leur entretien : ce n'est pas au lancement qu'on paie, c'est six mois plus tard, quand une plateforme change ses règles.",
       },
-      { type: 'h2', text: 'Une réserve, pour être honnête' },
+      { type: 'h2', text: 'Ce que fait Techtuel' },
       {
         type: 'p',
-        text: "Nous ne savons pas quel moteur de traduction il utilise. S'il s'agit d'un service premium plutôt que d'un modèle ouvert comme le nôtre, leur coût est supérieur au nôtre — mais pas de 10 $ l'heure. L'écart relève d'un choix de tarification, pas d'une contrainte technique. Nous ne prétendons pas connaître leurs marges.",
+        text: "Vous envoyez une URL. Vous récupérez du texte propre, prêt à découper, vectoriser ou indexer. Rien à héberger, aucun modèle à faire tourner, aucune file à surveiller.",
       },
       {
         type: 'p',
-        text: "Nos chiffres, eux, sont les nôtres, mesurés sur notre infrastructure. Les leurs sont ceux de leur grille publique en juillet 2026 — elle a pu changer depuis.",
+        text: "La traduction est incluse. Elle coûte 0,0047 € par heure de contenu contre 0,046 € pour la transcription — dix fois moins. Facturer un poste aussi marginal ajouterait un compteur sans ajouter de revenu, et transformerait le multilingue en variable de coût au moment précis où l'on veut élargir ses sources.",
+      },
+      {
+        type: 'p',
+        text: "Une vidéo déjà sous-titrée coûte un seul crédit, qu'elle dure six minutes ou trois heures. Sur un corpus de plusieurs centaines de sources, c'est ce détail qui décide du budget.",
+      },
+      {
+        type: 'p',
+        text: "Une API pour cesser de traiter l'accès aux sources parlées comme un projet, et le traiter comme un appel réseau.",
+      },
+      {
+        type: 'p',
+        text: "L'API est en production, servie par une infrastructure française.",
       },
     ],
   },
-]
+  {
+    slug: 'un-service-demail-sobre-ethique-et-souverain',
+    titre: "Un service d'email sobre, éthique et souverain",
+    chapeau:
+      "Les développeurs indépendants ont rarement besoin d'une immense plateforme marketing. Ils veulent envoyer une confirmation, une facture, un lien de connexion — et que ça parte.",
+    organe: 'Communication',
+    outil: 'Spore',
+    outilUrl: 'https://sporee.fr',
+    date: '2026-07-30',
+    lecture: '4 min',
+    blocs: [
+      {
+        type: 'p',
+        text: "Les développeurs indépendants ont rarement besoin d'une immense plateforme marketing. Ils veulent envoyer une confirmation d'inscription, une facture, une alerte ou un lien de connexion. Il leur faut un service fiable, simple à intégrer, et assez abordable pour accompagner un projet qui débute.",
+      },
+      {
+        type: 'p',
+        text: "Spore a été conçu pour cela : envoyer les messages nécessaires au fonctionnement d'un service, sans ajouter une mécanique commerciale autour de chaque utilisateur.",
+      },
+      { type: 'h2', text: 'Une communication sobre' },
+      {
+        type: 'p',
+        text: "Une adresse email ne devrait pas devenir automatiquement une opportunité marketing. Quand une personne crée un compte, effectue un achat ou demande une réinitialisation de mot de passe, elle attend l'information demandée. Rien d'autre.",
+      },
+      {
+        type: 'p',
+        text: "Les messages partent parce qu'ils ont une fonction précise. Ils confirment une action, transmettent une information, permettent à un service de fonctionner. Ils ne servent pas de prétexte à multiplier les relances.",
+      },
+      {
+        type: 'quote',
+        text: "Spore ne cherche pas à envoyer davantage de messages, mais à mieux envoyer ceux qui sont nécessaires.",
+      },
+      { type: 'h2', text: 'Une infrastructure maîtrisée' },
+      {
+        type: 'p',
+        text: "L'infrastructure d'envoi nous appartient : le serveur, l'adresse IP, la signature des messages. Vos domaines restent les vôtres — vous les rattachez, vous gardez la main dessus, et vous partez avec si vous le décidez.",
+      },
+      {
+        type: 'p',
+        text: "Il ne s'agit pas de prétendre vivre sans aucun intermédiaire. Il s'agit de reprendre le contrôle sur une fonction essentielle, celle sans laquelle un service cesse simplement de communiquer avec ses utilisateurs.",
+      },
+      { type: 'h2', text: 'Une réalité économique' },
+      {
+        type: 'p',
+        text: "Un freelance ou un petit éditeur ne devrait pas payer pour une suite marketing complète quand il cherche une infrastructure d'envoi. Spore se concentre sur l'essentiel : les domaines, les identités d'envoi, la délivrabilité, et une intégration simple dans une application.",
+      },
+      {
+        type: 'p',
+        text: "C'est aussi une limite assumée. Si vous cherchez des séquences automatisées, du scoring de contacts ou des campagnes segmentées, ce n'est pas ici. D'autres outils font cela très bien, et ce n'est pas ce que nous construisons.",
+      },
+      {
+        type: 'p',
+        text: "Reste ce qui compte pour un service qui démarre : que le message arrive, depuis une infrastructure sobre, éthique et maîtrisée.",
+      },
+    ],
+  }]
 
 export function articleBySlug(slug: string) {
   return articles.find((a) => a.slug === slug)

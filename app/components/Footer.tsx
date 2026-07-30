@@ -64,7 +64,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col gap-2 border-t border-text/15 pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="label text-text/60">№ 01 — {year}</p>
-          <p className="label text-text/60">Fait pour vous rendre capable</p>
+          <p className="label text-text/60">Nos outils, nos règles</p>
         </div>
       </div>
     </footer>
