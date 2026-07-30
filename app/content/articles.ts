@@ -176,27 +176,18 @@ export const articles: Article[] = [
         type: 'p',
         text: "C'est un point qu'on sous-estime. Quand la facture d'infrastructure est opaque, le prix client se construit à l'aveugle, avec une provision pour l'incertitude. Quand elle est connue au centime, le tarif se calcule.",
       },
-      { type: 'h2', text: "Ce que ça évite" },
+      { type: 'h2', text: 'Ce que ça rend possible' },
       {
         type: 'p',
-        text: "Il ne s'agit pas de préférer un fournisseur pour son adresse postale, mais de ce qui arrive quand on n'a pas le choix :",
-      },
-      {
-        type: 'liste',
-        items: [
-          'Un modèle est retiré du catalogue et votre produit s\'arrête',
-          'Les tarifs changent, sans négociation possible',
-          'Les conditions d\'usage évoluent et votre cas devient interdit',
-          'Vos données transitent sous une juridiction que vous ne choisissez pas',
-        ],
+        text: "Le point n'est pas de désigner un fournisseur plutôt qu'un autre. Il est qu'une option existe, ici, maintenant : on peut héberger ses services d'IA en France, faire tourner ses modèles de langue sur une infrastructure joignable, et construire un produit complet sans jamais sortir du pays.",
       },
       {
         type: 'p',
-        text: "Nous ne prétendons pas avoir vécu ces scénarios : nous avons fait en sorte de ne pas nous y exposer. Mais chacun découle de la même mécanique — quand une brique essentielle de votre produit appartient à quelqu'un d'autre, ses décisions deviennent les vôtres.",
+        text: "Ce n'était pas vrai il y a trois ans. Le catalogue était trop maigre, les modèles trop en retard, les endpoints trop instables. Aujourd'hui la chaîne tient de bout en bout, et elle tient en production.",
       },
       {
-        type: 'quote',
-        text: "Une dépendance qu'on a choisie est un partenariat. Une dépendance qu'on subit est un risque.",
+        type: 'p',
+        text: "Cela change ce qu'on peut décider. Une entreprise qui traite des données sensibles n'a plus à choisir entre l'IA et sa conformité. Un éditeur qui veut savoir où partent les contenus de ses clients peut répondre précisément. Un indépendant peut monter un produit sans dépendre d'un fournisseur qu'il n'atteindra jamais.",
       },
       { type: 'h2', text: 'Où ça ne suffit pas' },
       {
