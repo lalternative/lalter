@@ -275,7 +275,7 @@ function OutilsPage() {
                 <p className="label opacity-70">
                   {String(i + 1).padStart(2, '0')} — Organe {outil.organe}
                 </p>
-                <h2 className="font-heading mt-6 text-6xl leading-none sm:text-8xl">
+                <h2 className="display-card mt-6 sm:text-8xl">
                   {outil.name}
                 </h2>
               </div>

@@ -114,7 +114,7 @@ function AppsPage() {
                   <p className="label opacity-70">
                     {String(i + 1).padStart(2, '0')} — {capacite.kicker}
                   </p>
-                  <h2 className="font-heading mt-6 text-7xl leading-none sm:text-9xl">
+                  <h2 className="display-column mt-6">
                     {capacite.name}
                   </h2>
                 </div>
