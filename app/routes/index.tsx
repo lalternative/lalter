@@ -100,11 +100,25 @@ function LandingPage() {
             <p className="label text-accent-primary">Manifeste</p>
           </div>
 
-          {/* Two lines: the full name at display-xxl overflows on one. */}
-          <h1 className="display-xxl mt-8 sm:mt-10">
-            L'<span className="text-accent-primary">Alternative</span>
-            <br />
-            Fabrique
+          {/*
+           * Two lines, one whole word each, so the eye never has to reassemble
+           * the name. w-fit shrinks the heading onto its widest line so the
+           * ranged-right second line lands under the final E of L'ALTERNATIVE
+           * rather than at the far edge of the container, where it would read
+           * as a detached word instead of the rest of the name.
+           */}
+          <h1 className="display-xxl mt-8 w-fit sm:mt-10">
+            L'Alternative
+            {/*
+             * FABRIQUE sits smaller and flush right, tucked under the final E
+             * of the line above. Set at the same size and flush left it left a
+             * hole under the right half of the block; ranged right it closes
+             * that gap and reads as a signature under the name rather than a
+             * line that ran out of letters.
+             */}
+            <span className="block text-right text-[0.58em] leading-[0.95] text-accent-primary">
+              Fabrique
+            </span>
           </h1>
 
           <div className="mt-10 grid gap-10 sm:mt-14 sm:grid-cols-12">

@@ -46,10 +46,16 @@ h4 {
 }
 
 /* Editorial display: huge, tight, magazine-cover feel */
+/*
+ * Cover title. 0.85 is a poster-tight leading that only works on a single
+ * line: at 18vw the line box is shorter than the glyphs, so a second line
+ * collides with the first — Anton's cap height plus the descender on Q leaves
+ * no room. 0.92 keeps the lines locked together without letting them overlap.
+ */
 .display-xxl {
   font-family: var(--font-heading);
-  font-size: clamp(5rem, 18vw, 14rem);
-  line-height: 0.85;
+  font-size: clamp(4rem, 14vw, 11rem);
+  line-height: 0.92;
   letter-spacing: -0.02em;
   text-transform: uppercase;
 }
