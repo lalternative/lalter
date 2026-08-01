@@ -217,7 +217,7 @@ function ContactPage() {
             <div className="sm:col-span-5">
               <p className="label opacity-70">Participer</p>
               <p className="font-heading mt-6 text-4xl uppercase leading-none sm:text-6xl">
-                Ce qu'on cherche.
+                La porte est ouverte.
               </p>
             </div>
             <div className="sm:col-span-7">
@@ -227,8 +227,8 @@ function ContactPage() {
                     —
                   </span>
                   <span>
-                    Des gens qui utilisent les outils et disent franchement ce
-                    qui cloche
+                    Vous utilisez un des outils et quelque chose vous gêne :
+                    dites-le, on veut l'entendre
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -236,8 +236,8 @@ function ContactPage() {
                     —
                   </span>
                   <span>
-                    Des textes pour la revue, écrits par ceux qui font plutôt
-                    que par ceux qui commentent
+                    Vous avez un texte en tête pour la revue, même à l'état
+                    d'idée : proposez-le
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -245,14 +245,15 @@ function ContactPage() {
                     —
                   </span>
                   <span>
-                    Des organes qui manquent encore, et les mains pour les
-                    construire
+                    Il manque un organe, vous savez le construire ou vous
+                    voulez apprendre : venez
                   </span>
                 </li>
               </ul>
               <p className="mt-8 text-base opacity-70">
-                On ne recrute pas et il n'y a pas de fiche de poste. Dites
-                simplement ce que vous savez faire.
+                Et si votre idée n'entre dans aucune de ces trois lignes,
+                écrivez quand même. On répond à tout le monde, et une bonne
+                surprise vaut mieux qu'une case bien remplie.
               </p>
             </div>
           </div>
