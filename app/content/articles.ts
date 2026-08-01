@@ -62,20 +62,20 @@ export const articles: Article[] = [
       },
       {
         type: 'quote',
-        text: "Elle ne remplace pas l'ambition. Elle lui donne un passage.",
+        text: "Elle ne remplace pas le désir de faire. Elle lui donne un passage.",
       },
       { type: 'h2', text: 'Ce que ça change, concrètement' },
       {
         type: 'p',
-        text: "Les chiffres commencent à donner une idée de l'ampleur. Selon le baromètre France Num relayé par Bpifrance Le Lab, 31 % des TPE et PME françaises utilisent aujourd'hui l'IA générative. Les entrepreneurs interrogés déclarent y gagner environ deux heures et demie par semaine, principalement sur des tâches répétitives.",
+        text: "Les chiffres commencent à donner une idée de l'ampleur. Selon le baromètre semestriel de Bpifrance Le Lab publié en janvier 2026, 55 % des TPE et PME françaises déclarent recourir à l'IA générative, contre 31 % un an plus tôt et 15 % fin 2023. L'usage a plus que triplé en deux ans.",
       },
       {
         type: 'p',
-        text: "Ce ne sont pas des emplois remplacés : c'est du temps rendu. Deux heures et demie, pour un indépendant, c'est la différence entre repousser un projet et le commencer.",
+        text: "Reste ce que ce total ne dit pas. Parmi les TPE et PME qui n'y recourent pas, 65 % déclarent simplement n'identifier aucun usage dans leur entreprise. Ni le prix, ni la technique : l'obstacle est de ne pas voir ce qu'on pourrait en faire. C'est exactement le mur dont il est question ici — celui qui arrête avant l'essai.",
       },
       {
         type: 'p',
-        text: "Des cas plus spectaculaires circulent — des personnes sans aucune ligne de code à leur actif qui sortent une application en quelques semaines. Il faut les prendre pour ce qu'ils sont : des exceptions rendues visibles parce qu'elles ont réussi. Ce qui compte davantage est plus discret. L'artisan qui présente enfin correctement son activité. L'indépendant qui rédige ses propres documents. Le commerçant qui s'occupe de sa communication sans la sous-traiter.",
+        text: "Ce déplacement ne se voit pas dans les cas spectaculaires qui circulent, mais dans des gestes ordinaires. L'artisan qui présente enfin correctement son activité. L'indépendant qui rédige ses propres documents. Le commerçant qui s'occupe de sa communication sans la sous-traiter.",
       },
       {
         type: 'p',
@@ -83,12 +83,24 @@ export const articles: Article[] = [
       },
       {
         type: 'p',
-        text: "Ce n'est pas que le travail a disparu. C'est que le seuil d'entrée a baissé : on peut commencer plus tôt, avec moins de certitudes, et découvrir en chemin ce qu'on ignorait au départ.",
+        text: "Il ne faut pas se mentir : une partie du travail disparaît vraiment. Ce qu'on payait cher hier — mettre en forme, traduire, rédiger, produire une première version — se fait aujourd'hui en quelques minutes. Ce n'est pas un travail transformé, c'est un travail supprimé.",
+      },
+      {
+        type: 'p',
+        text: "Ce qui s'ouvre à la place est une autre route. Le seuil d'entrée a baissé, les coûts avec lui : ce qui exigeait un budget se tente désormais pour presque rien. L'occasion n'est pas de faire pareil plus vite, mais de tenter ce qu'on s'interdisait.",
       },
       { type: 'h2', text: "Ce que ça ne change pas" },
       {
         type: 'p',
-        text: "Créer un produit utile demande toujours du jugement, de la persévérance et une compréhension réelle du problème. Écrire un bon texte demande une pensée. Construire exige des choix, des renoncements, du travail.",
+        text: "Ce qui disparaît, c'est l'exécution — pas le jugement. Créer un produit utile demande toujours de la persévérance et une compréhension réelle du problème. Écrire un bon texte demande une pensée. Construire exige des choix, des renoncements, du travail.",
+      },
+      {
+        type: 'p',
+        text: "Elle ne remplace pas les compétences : elle les démultiplie. Le corollaire est sévère. Sans expertise réelle, elle produit vite un travail passable. Le seuil qu'elle abaisse est celui de l'entrée, pas celui de l'excellence.",
+      },
+      {
+        type: 'p',
+        text: "Elle débloque en revanche quelque chose que personne n'avait : une capacité universelle à comprendre et à se faire comprendre. Lire un contrat, saisir un texte technique, formuler une demande dans les termes attendus, écrire dans une langue qu'on ne parle pas. Ce n'était pas une question de talent mais d'accès — et c'est cet accès qui vient de changer de main.",
       },
       {
         type: 'p',
@@ -97,15 +109,23 @@ export const articles: Article[] = [
       { type: 'h2', text: 'La réserve qui compte' },
       {
         type: 'p',
-        text: "Rien de tout cela n'est acquis. L'IA ne supprime pas les différences entre les gens et ne corrige aucune inégalité. Elle peut même en créer : si son accès, sa compréhension et son usage se concentrent entre quelques mains, elle deviendra un privilège de plus.",
+        text: "Rien de tout cela n'est acquis, parce que rien de tout cela ne nous appartient.",
       },
       {
         type: 'p',
-        text: "Le même baromètre le montre déjà. Si 31 % des TPE et PME utilisent l'IA générative, la proportion tombe à 12 % chez les entreprises de moins de dix salariés. Autrement dit : l'outil censé abaisser les barrières profite d'abord à ceux qui en avaient le moins besoin.",
+        text: "Entraîner un modèle de fondation demande des capitaux, une puissance de calcul et une électricité que presque personne ne réunit. Le résultat est mécanique : une poignée d'acteurs décide de ce que ces outils savent faire, de ce qu'ils refusent, de leur prix et de leur disparition. Un instrument d'émancipation loué à un tiers qui peut en changer les règles du jour au lendemain reste un instrument de dépendance.",
       },
       {
         type: 'p',
-        text: "C'est précisément pourquoi la question de savoir qui détient les outils n'est pas secondaire. Un instrument d'émancipation loué à un tiers qui peut en changer les règles du jour au lendemain reste un instrument de dépendance.",
+        text: "Cette histoire a déjà eu lieu. Le logiciel libre n'a pas gagné en construisant des systèmes d'exploitation plus puissants que ceux des éditeurs — il a gagné en rendant les siens impossibles à confisquer. Personne ne peut retirer Linux du marché, ni en modifier la licence rétroactivement, ni décider qu'il coûtera le double l'an prochain.",
+      },
+      {
+        type: 'p',
+        text: "Le même partage se rejoue aujourd'hui, et il n'est pas perdu. Mistral publie les poids de Mistral Large 3 sous licence Apache 2.0 — un modèle de 675 milliards de paramètres, disponible sur Hugging Face, téléchargeable, exécutable chez soi, modifiable, sans redevance à l'usage. Ce ne sont pas des démonstrations : ce sont des modèles qu'on peut faire tourner sur sa propre infrastructure, et que personne ne peut reprendre.",
+      },
+      {
+        type: 'p',
+        text: "C'est la ligne de partage réelle. Pas entre l'IA et son absence, mais entre des outils qu'on utilise et des outils qu'on détient.",
       },
       { type: 'h2', text: "Ce qu'elle redonne" },
       {
@@ -119,6 +139,10 @@ export const articles: Article[] = [
       {
         type: 'p',
         text: "L'IA est alors moins une machine qui remplace qu'un outil qui révèle. Elle ne fait pas disparaître nos limites. Elle aide à ne plus être seulement défini par elles.",
+      },
+      {
+        type: 'p',
+        text: "Peut-être est-ce le moyen qui manquait. Pas une arme contre quelqu'un — un outil que chacun peut prendre, à condition qu'il reste prenable. C'est toute la question, et elle ne se décide pas toute seule.",
       },
     ],
   },
