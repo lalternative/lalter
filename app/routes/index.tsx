@@ -156,7 +156,7 @@ function LandingPage() {
             {/* big tile */}
             <article className="col-span-1 bg-accent-primary p-8 text-bg sm:col-span-7 sm:p-12">
               <p className="label opacity-80">{capacites[0].kicker}</p>
-              <h3 className="font-heading mt-6 text-6xl leading-none sm:text-8xl">
+              <h3 className="display-card mt-6 sm:text-8xl">
                 {capacites[0].name}
               </h3>
               <p className="chapeau mt-6 max-w-md">{capacites[0].tagline}</p>
@@ -165,7 +165,7 @@ function LandingPage() {
 
             <article className="col-span-1 bg-bg p-8 sm:col-span-5 sm:p-12">
               <p className="label text-text/60">{capacites[1].kicker}</p>
-              <h3 className="font-heading mt-6 text-5xl leading-none sm:text-7xl">
+              <h3 className="display-card mt-6 sm:text-7xl">
                 {capacites[1].name}
               </h3>
               <p className="mt-6 text-base text-text/80">{capacites[1].tagline}</p>
@@ -174,7 +174,7 @@ function LandingPage() {
 
             <article className="col-span-1 bg-accent-secondary p-8 text-bg sm:col-span-5 sm:p-12">
               <p className="label opacity-70">{capacites[2].kicker}</p>
-              <h3 className="font-heading mt-6 text-5xl leading-none sm:text-7xl">
+              <h3 className="display-card mt-6 sm:text-7xl">
                 {capacites[2].name}
               </h3>
               <p className="mt-6 text-base opacity-90">{capacites[2].tagline}</p>
@@ -183,7 +183,7 @@ function LandingPage() {
 
             <article className="col-span-1 bg-warm p-8 sm:col-span-7 sm:p-12">
               <p className="label text-text/70">{capacites[3].kicker}</p>
-              <h3 className="font-heading mt-6 text-6xl leading-none sm:text-8xl">
+              <h3 className="display-card mt-6 sm:text-8xl">
                 {capacites[3].name}
               </h3>
               <p className="chapeau mt-6 max-w-md">{capacites[3].tagline}</p>
@@ -192,7 +192,7 @@ function LandingPage() {
 
             <article className="col-span-1 bg-text p-8 text-bg sm:col-span-12 sm:p-12">
               <p className="label opacity-70">{capacites[4].kicker}</p>
-              <h3 className="font-heading mt-6 text-6xl leading-none sm:text-8xl">
+              <h3 className="display-card mt-6 sm:text-8xl">
                 {capacites[4].name}
               </h3>
               <p className="chapeau mt-6 max-w-xl opacity-90">
