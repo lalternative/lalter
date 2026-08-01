@@ -62,7 +62,10 @@ function BlogIndex() {
         <div className="mx-auto w-full max-w-7xl px-6 py-16 sm:py-24">
           <ul className="border-t-2 border-text">
             {articles.map((article) => (
-              <li key={article.slug} className="border-b-2 border-text">
+              <li
+                key={article.slug}
+                className="border-b-2 border-text last:border-b-0"
+              >
                 <Link
                   to="/blog/$slug"
                   params={{ slug: article.slug }}
