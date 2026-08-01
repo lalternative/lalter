@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: "1"
-    link.argocd.argoproj.io/web: "https://lalternativefabrique.fr"
+    link.argocd.argoproj.io/web: "https://lalternativefabrique.org"
     # `sklp run publish` pushes an immutable YYYYMMDD-HHMM-sha tag; the updater
     # picks the newest build and writes it back to git, so a merged publish
     # rolls out without a manual bump here.
