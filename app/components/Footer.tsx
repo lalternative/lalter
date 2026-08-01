@@ -1,4 +1,5 @@
 import { Link } from '@tanstack/react-router'
+import { Logo } from '@/components/Logo'
 
 export function Footer() {
   const year = new Date().getFullYear()
@@ -7,10 +8,8 @@ export function Footer() {
       <div className="mx-auto w-full max-w-7xl px-6 py-12">
         <div className="grid gap-10 sm:grid-cols-12">
           <div className="sm:col-span-6">
-            <p className="font-heading text-4xl leading-none sm:text-5xl">
-              L'ALTER
-            </p>
-            <p className="mt-4 max-w-sm text-base text-text/70">
+            <Logo size={96} className="h-24 w-24" />
+            <p className="mt-6 max-w-sm text-base text-text/70">
               Des outils sobres pour reprendre le pouvoir d'agir.
               Parce qu'on en est capable.
             </p>
@@ -52,10 +51,10 @@ export function Footer() {
             <ul className="mt-4 space-y-2 text-base">
               <li>
                 <a
-                  href="mailto:contact@lalter.fr"
+                  href="mailto:contact@lalternativefabrique.fr"
                   className="hover:text-accent-primary"
                 >
-                  contact@lalter.fr
+                  contact@lalternativefabrique.fr
                 </a>
               </li>
             </ul>

@@ -1,13 +1,15 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
+import { seo } from '@/lib/seo'
 
 export const Route = createFileRoute('/a-propos')({
   component: AProposPage,
-  head: () => ({
-    meta: [
-      { title: "À propos — L'Alter" },
-      { name: 'description', content: "L'Alter réunit des outils sobres qui vous donnent les moyens d'agir par vous-même." },
-    ],
-  }),
+  head: () =>
+    seo({
+      title: "À propos — L'Alternative Fabrique",
+      description:
+        "L'Alternative Fabrique réunit des outils sobres qui vous donnent les moyens d'agir par vous-même.",
+      path: '/a-propos',
+    }),
 })
 
 function AProposPage() {
@@ -18,9 +20,10 @@ function AProposPage() {
           <p className="label text-text/60">Le collectif</p>
           <h1 className="display-xl mt-6">À propos</h1>
           <p className="chapeau mt-10 max-w-2xl">
-            L'Alter réunit des outils sobres qui vous donnent les moyens
-            d'agir par vous-même — et mutualisent une partie de leurs revenus
-            dans un pot commun pour financer les briques qui manquent encore.
+            L'Alternative Fabrique réunit des outils sobres qui vous donnent
+            les moyens d'agir par vous-même — et mutualisent une partie de
+            leurs revenus dans un pot commun pour financer les briques qui
+            manquent encore.
           </p>
         </div>
       </section>
@@ -34,7 +37,7 @@ function AProposPage() {
           <div className="prose-editorial mt-10 text-text/85">
             <p>
               La plupart des outils décident à votre place : ils simplifient
-              en vous retirant la main. L'Alter part de l'idée inverse —
+              en vous retirant la main. La Fabrique part de l'idée inverse —
               vous savez ce que vous faites, il suffit qu'on vous en donne les
               moyens.
             </p>

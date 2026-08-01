@@ -12,7 +12,7 @@ import { useState } from 'react'
  * silently dropping addresses.
  */
 const ENDPOINT = import.meta.env.VITE_INSCRIPTION_URL as string | undefined
-const CONTACT = 'contact@lalter.fr'
+const CONTACT = 'contact@lalternativefabrique.fr'
 
 type Etat = 'repos' | 'envoi' | 'ok' | 'erreur'
 
