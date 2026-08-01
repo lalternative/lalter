@@ -1,17 +1,15 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
+import { seo } from '@/lib/seo'
 
 export const Route = createFileRoute('/pot')({
   component: PotPage,
-  head: () => ({
-    meta: [
-      { title: 'Le pot commun — L\'Alter' },
-      {
-        name: 'description',
-        content:
-          "Chaque centime dépensé dans nos outils sert à reforger nos propres moyens numériques. Le pot commun finance saison après saison ce qui nous échappe aujourd'hui.",
-      },
-    ],
-  }),
+  head: () =>
+    seo({
+      title: "Le pot commun — L'Alternative Fabrique",
+      description:
+        "Chaque centime dépensé dans nos outils sert à reforger nos propres moyens numériques. Le pot commun finance saison après saison ce qui nous échappe aujourd'hui.",
+      path: '/pot',
+    }),
 })
 
 /** A season: an audience served, a set of tools shipped, a goal funded. */

@@ -1,13 +1,15 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
+import { seo } from '@/lib/seo'
 
 export const Route = createFileRoute('/apps')({
   component: AppsPage,
-  head: () => ({
-    meta: [
-      { title: "Les organes — L'Alter" },
-      { name: 'description', content: "Les cinq organes du pouvoir d'agir : connaissance, technique, création, financement, communication. Un outil sobre pour chacun." },
-    ],
-  }),
+  head: () =>
+    seo({
+      title: "Les organes — L'Alternative Fabrique",
+      description:
+        "Les cinq organes du pouvoir d'agir : connaissance, technique, création, financement, communication. Un outil sobre pour chacun.",
+      path: '/apps',
+    }),
 })
 
 type Capacite = {

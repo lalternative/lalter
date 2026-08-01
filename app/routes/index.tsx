@@ -1,7 +1,37 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
+import { ORGANIZATION, SITE_URL, jsonLd, seo } from '@/lib/seo'
+
+const homeSeo = seo({
+  title: "L'Alternative Fabrique — des outils sobres pour reprendre le pouvoir d'agir",
+  description:
+    "Cinq organes du pouvoir d'agir — connaissance, technique, création, financement, communication — et un outil sobre pour chacun. On en est capable.",
+  path: '/',
+})
 
 export const Route = createFileRoute('/')({
   component: LandingPage,
+  head: () => ({
+    ...homeSeo,
+    meta: [
+      ...homeSeo.meta,
+      // WebSite + Organization are declared once, on the home page: it is the
+      // node every other page's publisher reference points back to.
+      jsonLd({
+        '@context': 'https://schema.org',
+        '@graph': [
+          ORGANIZATION,
+          {
+            '@type': 'WebSite',
+            '@id': `${SITE_URL}/#website`,
+            url: SITE_URL,
+            name: "L'Alternative Fabrique",
+            inLanguage: 'fr-FR',
+            publisher: { '@id': `${SITE_URL}/#organization` },
+          },
+        ],
+      }),
+    ],
+  }),
 })
 
 type Capacite = {
@@ -70,8 +100,11 @@ function LandingPage() {
             <p className="label text-accent-primary">Manifeste</p>
           </div>
 
+          {/* Two lines: the full name at display-xxl overflows on one. */}
           <h1 className="display-xxl mt-8 sm:mt-10">
-            L'<span className="text-accent-primary">Alter</span>
+            L'<span className="text-accent-primary">Alternative</span>
+            <br />
+            Fabrique
           </h1>
 
           <div className="mt-10 grid gap-10 sm:mt-14 sm:grid-cols-12">

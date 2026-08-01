@@ -1,18 +1,16 @@
 import { useEffect, useState } from 'react'
 import { Link, createFileRoute } from '@tanstack/react-router'
+import { seo } from '@/lib/seo'
 
 export const Route = createFileRoute('/outils')({
   component: OutilsPage,
-  head: () => ({
-    meta: [
-      { title: "Les outils — L'Alter" },
-      {
-        name: 'description',
-        content:
-          "Les outils de L'Alter qui tournent aujourd'hui : Synthiz, Techtuel, Spore, Lungor, Skalpai. À chaque organe son outil.",
-      },
-    ],
-  }),
+  head: () =>
+    seo({
+      title: "Les outils — L'Alternative Fabrique",
+      description:
+        "Les outils de L'Alternative Fabrique qui tournent aujourd'hui : Synthiz, Techtuel, Spore, Lungor, Skalpai. À chaque organe son outil.",
+      path: '/outils',
+    }),
 })
 
 type Outil = {

@@ -1,0 +1,9 @@
+# Not a monorepo — this file exists because pnpm moved settings here out of the
+# "pnpm" field in package.json. pnpm 10+ blocks dependency build scripts unless
+# they are whitelisted; esbuild needs its postinstall to fetch its native
+# binary, without which `vite build` fails.
+onlyBuiltDependencies:
+  - esbuild
+
+allowBuilds:
+  esbuild: true

@@ -1,18 +1,16 @@
 import { useState } from 'react'
 import { createFileRoute } from '@tanstack/react-router'
+import { seo } from '@/lib/seo'
 
 export const Route = createFileRoute('/contact')({
   component: ContactPage,
-  head: () => ({
-    meta: [
-      { title: "Contact — L'Alter" },
-      {
-        name: 'description',
-        content:
-          "Une question, ou l'envie de participer : écrivez-nous. Une seule adresse, une vraie réponse.",
-      },
-    ],
-  }),
+  head: () =>
+    seo({
+      title: "Contact — L'Alternative Fabrique",
+      description:
+        "Une question, ou l'envie de participer : écrivez-nous. Une seule adresse, une vraie réponse.",
+      path: '/contact',
+    }),
 })
 
 /**
@@ -22,7 +20,7 @@ export const Route = createFileRoute('/contact')({
  * dropping messages.
  */
 const ENDPOINT = import.meta.env.VITE_CONTACT_URL as string | undefined
-const CONTACT = 'contact@lalter.fr'
+const CONTACT = 'contact@lalternativefabrique.fr'
 
 const motifs = [
   { value: 'participer', label: 'Je veux participer' },
@@ -48,7 +46,7 @@ function ContactPage() {
       motifs.find((m) => m.value === motif)?.label ?? 'Message'
     const corps = `${message}\n\n—\n${nom}\n${email}`
     window.location.href = `mailto:${CONTACT}?subject=${encodeURIComponent(
-      `[L'Alter] ${libelle}`,
+      `[L'Alternative Fabrique] ${libelle}`,
     )}&body=${encodeURIComponent(corps)}`
     setEtat('ok')
   }

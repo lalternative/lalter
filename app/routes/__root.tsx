@@ -13,20 +13,23 @@ export const Route = createRootRoute({
     meta: [
       { charSet: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
-      { title: "L'Alter" },
+      { title: "L'Alternative Fabrique" },
       {
         name: 'description',
         content:
-          "L'Alter — des outils sobres pour reprendre le pouvoir d'agir : connaissance, technique, création, financement, communication. On en est capable.",
+          "L'Alternative Fabrique — des outils sobres pour reprendre le pouvoir d'agir : connaissance, technique, création, financement, communication. On en est capable.",
       },
       // Social previews. Per-route head() overrides title/description above.
-      { property: 'og:site_name', content: "L'Alter" },
+      { property: 'og:site_name', content: "L'Alternative Fabrique" },
       { property: 'og:type', content: 'website' },
       { property: 'og:locale', content: 'fr_FR' },
       { name: 'twitter:card', content: 'summary_large_image' },
     ],
     links: [
       { rel: 'stylesheet', href: appCss },
+      { rel: 'icon', href: '/favicon.ico', sizes: 'any' },
+      { rel: 'icon', href: '/favicon-32.png', type: 'image/png' },
+      { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
       { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: '' },
       {
