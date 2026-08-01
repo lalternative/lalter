@@ -10,7 +10,13 @@ import { articles } from './app/content/articles'
 
 // Kept in sync with SITE_URL in app/lib/seo.ts. Not imported from there: this
 // file is loaded by Node before the '@/' alias exists.
-const SITE_URL = 'https://lalternativefabrique.fr'
+//
+// Nothing enforces that sync, and it has already drifted once: the domain was
+// updated everywhere else while this copy still emitted the old one into
+// sitemap.xml, advertising URLs on a domain that did not resolve. When you
+// change it, change it in both files — and check the built sitemap, not just
+// the rendered canonical tag, since they come from different sources.
+const SITE_URL = 'https://lalternativefabrique.org'
 
 /**
  * Every route to prerender. This is the single source of truth: the same list
