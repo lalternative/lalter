@@ -20,7 +20,7 @@ export const Route = createFileRoute('/contact')({
  * dropping messages.
  */
 const ENDPOINT = import.meta.env.VITE_CONTACT_URL as string | undefined
-const CONTACT = 'contact@lalternativefabrique.fr'
+const CONTACT = 'contact@lalternativefabrique.org'
 
 const motifs = [
   { value: 'participer', label: 'Je veux participer' },

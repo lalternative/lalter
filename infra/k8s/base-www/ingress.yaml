@@ -22,8 +22,8 @@ metadata:
     argocd.argoproj.io/sync-wave: "2"
 spec:
   redirectRegex:
-    regex: "^https?://www\\.lalternativefabrique\\.fr/(.*)"
-    replacement: "https://lalternativefabrique.fr/${1}"
+    regex: "^https?://www\\.lalternativefabrique\\.org/(.*)"
+    replacement: "https://lalternativefabrique.org/${1}"
     permanent: true
 
 ---
@@ -85,7 +85,7 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-    - host: lalternativefabrique.fr
+    - host: lalternativefabrique.org
       http:
         paths:
           - path: /
@@ -95,7 +95,7 @@ spec:
                 name: lalter-www
                 port:
                   number: 8080
-    - host: www.lalternativefabrique.fr
+    - host: www.lalternativefabrique.org
       http:
         paths:
           - path: /
@@ -123,11 +123,11 @@ spec:
     # redirect middleware can run, otherwise the browser fails the handshake
     # first and never sees the 301.
     - hosts:
-        - lalternativefabrique.fr
-        - www.lalternativefabrique.fr
+        - lalternativefabrique.org
+        - www.lalternativefabrique.org
       secretName: lalter-www-tls
   rules:
-    - host: lalternativefabrique.fr
+    - host: lalternativefabrique.org
       http:
         paths:
           - path: /
@@ -139,7 +139,7 @@ spec:
                   number: 8080
     # Declared so Traefik terminates TLS for the host; the redirect middleware
     # answers before the request ever reaches this backend.
-    - host: www.lalternativefabrique.fr
+    - host: www.lalternativefabrique.org
       http:
         paths:
           - path: /
