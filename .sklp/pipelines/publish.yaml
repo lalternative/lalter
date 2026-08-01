@@ -41,5 +41,5 @@ steps:
     scope: [web, shared]
     context: .
     dockerfile: Dockerfile
-    image: rg.fr-par.scw.cloud/lalter/www
+    image: rg.fr-par.scw.cloud/lalternative/www
     tag: "{{ publish_tag }}"
