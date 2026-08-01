@@ -11,12 +11,10 @@ patches:
   - path: resources.yaml
 
 images:
-  # Placeholder until the first `sklp run publish` lands. Replace with the tag
-  # that run prints (YYYYMMDD-HHMM-sha) before the first sync — argocd-image-
-  # updater then owns this field and writes newer tags back to main via the
-  # .argocd-source override file.
+  # argocd-image-updater owns this field from here on: it watches the registry
+  # and writes newer tags back to main via the .argocd-source override file.
   - name: rg.fr-par.scw.cloud/lalternative/www
-    newTag: "SET_ON_FIRST_PUBLISH" # managed by argocd-image-updater
+    newTag: "20260801-0830-e872dae" # managed by argocd-image-updater
 
 labels:
   - pairs:
