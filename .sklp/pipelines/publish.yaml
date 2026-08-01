@@ -16,7 +16,7 @@ registry:
 
 tools:
   node: "24.16.0"
-  pnpm: "10.27.0"
+  pnpm: "11.3.0"
 
 # Single service: the whole repo builds one static image. The scope mirrors
 # ci.yaml's `web`, plus the files that only affect packaging (Dockerfile,

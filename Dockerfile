@@ -17,13 +17,13 @@
 # discarded. Only the prerendered dist/client flows into the runtime stage,
 # keeping build-only tools (the esbuild Go binary, etc.) out of the shipped
 # image.
-FROM node:22-bookworm AS builder
+FROM node:24-bookworm AS builder
 
 WORKDIR /app
 
 # Pin pnpm to the version in .sklp/space.yaml so the lockfile resolves the same
 # way here as it does in CI.
-RUN corepack enable && corepack prepare pnpm@10.27.0 --activate
+RUN corepack enable && corepack prepare pnpm@11.3.0 --activate
 
 # pnpm-workspace.yaml is not a monorepo marker here — it carries the
 # onlyBuiltDependencies/allowBuilds settings that let esbuild run its
@@ -63,7 +63,10 @@ RUN pnpm build
 # nginx-unprivileged: the stock nginx image runs its master as root and binds
 # :80. This variant is built to run as a non-root user on a high port, so no
 # capability is needed and USER below is not fighting the entrypoint.
-FROM nginxinc/nginx-unprivileged:1.29-alpine
+# Alpine pinned explicitly, not just via `-alpine`: 1.29-alpine still resolves
+# to Alpine 3.23, whose c-ares/curl/openssl/libxml2 carry 11 fixed HIGH CVEs
+# that fail the publish scan. 3.24 ships the patched packages.
+FROM nginxinc/nginx-unprivileged:1.31-alpine3.24
 
 # Replace the default site entirely rather than dropping a conf.d snippet, so
 # no stock server block survives to answer on an unexpected path.
