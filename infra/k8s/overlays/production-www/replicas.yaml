@@ -1,0 +1,9 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lalter-www
+spec:
+  # Two replicas in production so a node loss or a rolling update never leaves
+  # the public site with zero serving pods. The image is ~60MB of nginx plus
+  # static assets, so the second replica is close to free.
+  replicas: 2

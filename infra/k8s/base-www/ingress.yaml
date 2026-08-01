@@ -1,0 +1,151 @@
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: lalter-redirect-https
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  redirectScheme:
+    scheme: https
+    permanent: true
+
+---
+# www -> apex. app/lib/seo.ts sets SITE_URL to the apex and public/robots.txt
+# points the sitemap there, so the apex is the canonical origin; serving both
+# hosts would publish the same pages under two URLs. Redirecting at the edge
+# keeps one indexable origin instead of relying on the canonical tag alone.
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: lalter-redirect-apex
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  redirectRegex:
+    regex: "^https?://www\\.lalternativefabrique\\.fr/(.*)"
+    replacement: "https://lalternativefabrique.fr/${1}"
+    permanent: true
+
+---
+# nginx.conf gzips static assets on the way out, but leaves the prerendered
+# index.html files to whatever the edge does. Compressing here covers them
+# without a second gzip implementation in the image.
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: lalter-compress
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  compress:
+    includedContentTypes:
+      - text/html
+      - text/css
+      - text/javascript
+      - application/javascript
+      - application/json
+      - image/svg+xml
+
+---
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: lalter-security-headers
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  headers:
+    # Pin the browser to https for a year. Only ever emitted on websecure —
+    # the http ingress redirects before this middleware runs, which is what
+    # the spec requires of an HSTS header sent over plain http.
+    stsSeconds: 31536000
+    stsIncludeSubdomains: true
+    # No `preload`: the browser preload list is effectively irreversible, and
+    # a future subdomain needing plain http would be unrecoverable.
+    stsPreload: false
+    contentTypeNosniff: true
+    # The site is never embedded, so deny framing outright. frameDeny emits
+    # the legacy X-Frame-Options; frame-ancestors is the modern equivalent.
+    frameDeny: true
+    referrerPolicy: strict-origin-when-cross-origin
+    contentSecurityPolicy: "frame-ancestors 'none'"
+
+---
+# Plain http listener: exists only to bounce traffic to https. It also has to
+# keep answering /.well-known/acme-challenge for cert-manager's HTTP-01 solver,
+# which cert-manager handles by injecting a higher-priority route of its own.
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: lalter-www-http
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+    traefik.ingress.kubernetes.io/router.middlewares: lalternative-prod-lalter-redirect-https@kubernetescrd
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: lalternativefabrique.fr
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: lalter-www
+                port:
+                  number: 8080
+    - host: www.lalternativefabrique.fr
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: lalter-www
+                port:
+                  number: 8080
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: lalter-www
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
+    cert-manager.io/cluster-issuer: letsencrypt-ovh
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.middlewares: lalternative-prod-lalter-redirect-apex@kubernetescrd,lalternative-prod-lalter-security-headers@kubernetescrd,lalternative-prod-lalter-compress@kubernetescrd
+spec:
+  ingressClassName: traefik
+  tls:
+    # Both hosts share one certificate: www must present valid TLS before the
+    # redirect middleware can run, otherwise the browser fails the handshake
+    # first and never sees the 301.
+    - hosts:
+        - lalternativefabrique.fr
+        - www.lalternativefabrique.fr
+      secretName: lalter-www-tls
+  rules:
+    - host: lalternativefabrique.fr
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: lalter-www
+                port:
+                  number: 8080
+    # Declared so Traefik terminates TLS for the host; the redirect middleware
+    # answers before the request ever reaches this backend.
+    - host: www.lalternativefabrique.fr
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: lalter-www
+                port:
+                  number: 8080

@@ -1,0 +1,14 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: lalter-www-pdb
+spec:
+  # maxUnavailable rather than minAvailable: the production overlay runs 2
+  # replicas, but a single-replica deployment with minAvailable=1 would block
+  # node drains outright (the budget could never be satisfied). This phrasing
+  # keeps one pod serving during a voluntary eviction and still lets the node
+  # drain when only one replica exists.
+  maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: lalter-www

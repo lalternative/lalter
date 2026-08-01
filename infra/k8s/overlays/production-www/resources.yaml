@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lalter-www
+spec:
+  template:
+    spec:
+      # Restated from base-www: Kustomize would inherit it, but Trivy scans
+      # this manifest standalone (it does not resolve overlays) and flags a
+      # pod with no runAsNonRoot as KSV-0118.
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 101
+        runAsGroup: 101
+      containers:
+        - name: lalter-www
+          # Kustomize merges by container name, so the hardened context from
+          # base-www is dropped when this overlay redeclares the container for
+          # its resource tuning — restate it here to keep it in prod.
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
+          resources:
+            requests:
+              cpu: 25m
+              memory: 48Mi
+            limits:
+              cpu: 300m
+              memory: 128Mi
