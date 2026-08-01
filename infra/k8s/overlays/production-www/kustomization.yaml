@@ -14,7 +14,7 @@ images:
   # argocd-image-updater owns this field from here on: it watches the registry
   # and writes newer tags back to main via the .argocd-source override file.
   - name: rg.fr-par.scw.cloud/lalternative/www
-    newTag: "20260801-0934-28b05ac" # managed by argocd-image-updater
+    newTag: "20260801-1349-cb4cdb7" # managed by argocd-image-updater
 
 labels:
   - pairs:
