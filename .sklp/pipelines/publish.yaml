@@ -1,0 +1,45 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/digstack/skalpai/main/apps/sklp/pipeline/pipeline.schema.json
+version: 1
+kind: pipeline
+name: publish
+space: false
+
+require:
+  branches: [main]
+  clean_tree: true
+
+tag:
+  strategy: date-sha
+
+registry:
+  provider: scaleway
+
+tools:
+  node: "24.16.0"
+  pnpm: "10.27.0"
+
+# Single service: the whole repo builds one static image. The scope mirrors
+# ci.yaml's `web`, plus the files that only affect packaging (Dockerfile,
+# nginx.conf, pnpm-workspace.yaml) and would otherwise not trigger a rebuild.
+scopes:
+  web:
+    - "app/**"
+    - "public/**"
+    - "vite.config.ts"
+    - "package.json"
+    - "pnpm-lock.yaml"
+    - "pnpm-workspace.yaml"
+    - "tsconfig.json"
+    - "Dockerfile"
+    - "nginx.conf"
+  shared:
+    - ".sklp/**"
+
+steps:
+  - name: web
+    kind: publish
+    scope: [web, shared]
+    context: .
+    dockerfile: Dockerfile
+    image: rg.fr-par.scw.cloud/lalter/www
+    tag: "{{ publish_tag }}"
