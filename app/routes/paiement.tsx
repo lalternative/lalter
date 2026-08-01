@@ -1,17 +1,15 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
+import { seo } from '@/lib/seo'
 
 export const Route = createFileRoute('/paiement')({
   component: PaiementPage,
-  head: () => ({
-    meta: [
-      { title: 'Le chantier du paiement — L\'Alter' },
-      {
-        name: 'description',
-        content:
-          "Encaisser demande une autorisation. Les quatre marches réglementaires qui mènent à opérer ses propres paiements, et ce que chacune coûte.",
-      },
-    ],
-  }),
+  head: () =>
+    seo({
+      title: "Le chantier du paiement — L'Alternative Fabrique",
+      description:
+        "Encaisser demande une autorisation. Les quatre marches réglementaires qui mènent à opérer ses propres paiements, et ce que chacune coûte.",
+      path: '/paiement',
+    }),
 })
 
 /** A regulatory step on the way to running payments without a licensed third party. */

@@ -1,6 +1,13 @@
 import { Link, createFileRoute, notFound } from '@tanstack/react-router'
 import { articleBySlug } from '@/content/articles'
 import { Inscription } from '@/components/Inscription'
+import {
+  ORGANIZATION,
+  SITE_URL,
+  absoluteUrl,
+  jsonLd,
+  seo,
+} from '@/lib/seo'
 
 export const Route = createFileRoute('/blog/$slug')({
   component: BlogArticle,
@@ -9,15 +16,44 @@ export const Route = createFileRoute('/blog/$slug')({
     if (!article) throw notFound()
     return article
   },
-  head: ({ loaderData }) =>
-    loaderData
-      ? {
-          meta: [
-            { title: `${loaderData.titre} — L'Alter` },
-            { name: 'description', content: loaderData.chapeau },
-          ],
-        }
-      : {},
+  head: ({ loaderData }) => {
+    if (!loaderData) return {}
+
+    const path = `/blog/${loaderData.slug}`
+    const url = absoluteUrl(path)
+    const base = seo({
+      title: `${loaderData.titre} — L'Alternative Fabrique`,
+      description: loaderData.chapeau,
+      path,
+      type: 'article',
+      publishedTime: loaderData.date,
+      section: loaderData.organe,
+    })
+
+    return {
+      ...base,
+      meta: [
+        ...base.meta,
+        // Article markup is what makes an editorial page eligible for the
+        // richer result: it carries the headline, the date and the publisher.
+        jsonLd({
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          '@id': `${url}#article`,
+          headline: loaderData.titre,
+          description: loaderData.chapeau,
+          datePublished: loaderData.date,
+          // No separate revision date is tracked; publication doubles as it.
+          dateModified: loaderData.date,
+          articleSection: loaderData.organe,
+          inLanguage: 'fr-FR',
+          mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+          author: { '@id': `${SITE_URL}/#organization` },
+          publisher: ORGANIZATION,
+        }),
+      ],
+    }
+  },
 })
 
 function BlogArticle() {

@@ -1,17 +1,36 @@
 import { Link, createFileRoute } from '@tanstack/react-router'
 import { articles } from '@/content/articles'
 import { Inscription } from '@/components/Inscription'
+import { absoluteUrl, jsonLd, seo } from '@/lib/seo'
+
+const blogSeo = seo({
+  title: "La revue — L'Alternative Fabrique",
+  description:
+    "Des textes courts et denses sur le pouvoir d'agir concret : garder la main sur son savoir, ses outils, sa parole.",
+  path: '/blog',
+})
 
 export const Route = createFileRoute('/blog/')({
   component: BlogIndex,
   head: () => ({
+    ...blogSeo,
     meta: [
-      { title: "La revue — L'Alter" },
-      {
-        name: 'description',
-        content:
-          "Des textes courts et denses sur le pouvoir d'agir concret : garder la main sur son savoir, ses outils, sa parole.",
-      },
+      ...blogSeo.meta,
+      // Lists the articles so a crawler sees the collection without having to
+      // follow every link first.
+      jsonLd({
+        '@context': 'https://schema.org',
+        '@type': 'Blog',
+        '@id': `${absoluteUrl('/blog')}#blog`,
+        name: 'La revue',
+        inLanguage: 'fr-FR',
+        blogPost: articles.map((a) => ({
+          '@type': 'BlogPosting',
+          headline: a.titre,
+          datePublished: a.date,
+          url: absoluteUrl(`/blog/${a.slug}`),
+        })),
+      }),
     ],
   }),
 })
