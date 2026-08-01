@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: lalter
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+spec:
+  description: L'Alternative Fabrique — public website
+  sourceRepos:
+    - "https://github.com/lalternativefabrique/www.git"
+  destinations:
+    - namespace: lalternative-prod
+      server: https://kubernetes.default.svc
+  # The overlay creates its own namespace, so the project must be allowed to
+  # manage that one cluster-scoped kind and nothing else.
+  clusterResourceWhitelist:
+    - group: ""
+      kind: Namespace
+  namespaceResourceWhitelist:
+    - group: "*"
+      kind: "*"
+  orphanedResources:
+    warn: true

@@ -1,0 +1,104 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: lalter-www
+  labels:
+    app: lalter-www
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8080
+      targetPort: http
+      name: http
+  selector:
+    app: lalter-www
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lalter-www
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      # The site is stateless static content, so a surge costs nothing and
+      # keeps the rollout from ever dropping to zero ready pods.
+      maxUnavailable: 0
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app: lalter-www
+  template:
+    metadata:
+      labels:
+        app: lalter-www
+    spec:
+      imagePullSecrets:
+        # Projected into this namespace by the platform-wide
+        # ClusterExternalSecret in kube-infra
+        # (stacks/platform/ovh/forge-v1.ts) — it reads the shared
+        # `/dockerconfig` Scaleway secret and fans it out to the namespaces
+        # listed in `appNamespaces` there. A namespace missing from that list
+        # gets no pull secret and every pod here fails ImagePullBackOff, so
+        # `lalternative-prod` must stay in it.
+        - name: scw-registry-credentials
+      securityContext:
+        # 101 is the nginx user baked into nginxinc/nginx-unprivileged; the
+        # Dockerfile already sets USER 101:101, restated here so the admission
+        # policy can see it without resolving the image.
+        runAsNonRoot: true
+        runAsUser: 101
+        runAsGroup: 101
+      containers:
+        - name: lalter-www
+          image: rg.fr-par.scw.cloud/lalter/www:SET_BY_KUSTOMIZE
+          imagePullPolicy: Always
+          ports:
+            # Matches `listen 8080` in nginx.conf. A high port means the
+            # unprivileged user binds it without CAP_NET_BIND_SERVICE.
+            - containerPort: 8080
+              name: http
+          readinessProbe:
+            httpGet:
+              # Served by nginx from memory (`return 200`), so a probe never
+              # touches the filesystem or logs.
+              path: /healthz
+              port: http
+            initialDelaySeconds: 3
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 20
+          resources:
+            # nginx serving ~700KB of prerendered assets: the floor is the
+            # worker pool, not the content.
+            requests:
+              cpu: 10m
+              memory: 32Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
+          volumeMounts:
+            # readOnlyRootFilesystem blocks every path nginx writes to. The
+            # config already redirects each temp path plus the pid file under
+            # /tmp (see nginx.conf), so one writable emptyDir there is all the
+            # container needs.
+            - name: tmp
+              mountPath: /tmp
+      volumes:
+        - name: tmp
+          emptyDir: {}

@@ -1,0 +1,24 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: lalternative-prod
+
+resources:
+  - ../../base-www
+
+patches:
+  - path: replicas.yaml
+  - path: resources.yaml
+
+images:
+  # Placeholder until the first `sklp run publish` lands. Replace with the tag
+  # that run prints (YYYYMMDD-HHMM-sha) before the first sync — argocd-image-
+  # updater then owns this field and writes newer tags back to main via the
+  # .argocd-source override file.
+  - name: rg.fr-par.scw.cloud/lalter/www
+    newTag: "SET_ON_FIRST_PUBLISH" # managed by argocd-image-updater
+
+labels:
+  - pairs:
+      environment: production
+    includeSelectors: false

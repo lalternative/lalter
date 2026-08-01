@@ -1,0 +1,41 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: lalter-www
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+    link.argocd.argoproj.io/web: "https://lalternativefabrique.fr"
+    # `sklp run publish` pushes an immutable YYYYMMDD-HHMM-sha tag; the updater
+    # picks the newest build and writes it back to git, so a merged publish
+    # rolls out without a manual bump here.
+    argocd-image-updater.argoproj.io/image-list: "www=rg.fr-par.scw.cloud/lalter/www"
+    argocd-image-updater.argoproj.io/www.update-strategy: newest-build
+    argocd-image-updater.argoproj.io/www.kustomize.image-name: rg.fr-par.scw.cloud/lalter/www
+    argocd-image-updater.argoproj.io/write-back-method: git
+    argocd-image-updater.argoproj.io/git-branch: main
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: lalter
+  source:
+    repoURL: https://github.com/lalternativefabrique/www.git
+    targetRevision: main
+    path: infra/k8s/overlays/production-www
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: lalternative-prod
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
+      - PrunePropagationPolicy=foreground
+      - RespectIgnoreDifferences=true
+    retry:
+      limit: 3
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m

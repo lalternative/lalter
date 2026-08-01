@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: lalternative-prod
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
+  labels:
+    name: lalternative-prod
+    app.kubernetes.io/part-of: lalter
