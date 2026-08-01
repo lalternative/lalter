@@ -9,9 +9,9 @@ metadata:
     # `sklp run publish` pushes an immutable YYYYMMDD-HHMM-sha tag; the updater
     # picks the newest build and writes it back to git, so a merged publish
     # rolls out without a manual bump here.
-    argocd-image-updater.argoproj.io/image-list: "www=rg.fr-par.scw.cloud/lalter/www"
+    argocd-image-updater.argoproj.io/image-list: "www=rg.fr-par.scw.cloud/lalternative/www"
     argocd-image-updater.argoproj.io/www.update-strategy: newest-build
-    argocd-image-updater.argoproj.io/www.kustomize.image-name: rg.fr-par.scw.cloud/lalter/www
+    argocd-image-updater.argoproj.io/www.kustomize.image-name: rg.fr-par.scw.cloud/lalternative/www
     argocd-image-updater.argoproj.io/write-back-method: git
     argocd-image-updater.argoproj.io/git-branch: main
   finalizers:

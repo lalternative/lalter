@@ -56,7 +56,7 @@ spec:
         runAsGroup: 101
       containers:
         - name: lalter-www
-          image: rg.fr-par.scw.cloud/lalter/www:SET_BY_KUSTOMIZE
+          image: rg.fr-par.scw.cloud/lalternative/www:SET_BY_KUSTOMIZE
           imagePullPolicy: Always
           ports:
             # Matches `listen 8080` in nginx.conf. A high port means the
