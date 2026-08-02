@@ -105,5 +105,5 @@ export const ORGANIZATION = {
   url: SITE_URL,
   email: CONTACT_EMAIL,
   description:
-    "Des outils sobres pour reprendre le pouvoir d'agir : connaissance, technique, création, financement, communication.",
+    "Des outils sobres pour construire une alternative : connaissance, technique, création, financement, communication.",
 } as const

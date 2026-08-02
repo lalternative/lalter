@@ -2,9 +2,9 @@ import { Link, createFileRoute } from '@tanstack/react-router'
 import { ORGANIZATION, SITE_URL, jsonLd, seo } from '@/lib/seo'
 
 const homeSeo = seo({
-  title: "L'Alternative Fabrique — des outils sobres pour reprendre le pouvoir d'agir",
+  title: "L'Alternative Fabrique — des outils sobres pour construire une alternative",
   description:
-    "Cinq organes du pouvoir d'agir — connaissance, technique, création, financement, communication — et un outil sobre pour chacun. On en est capable.",
+    "Cinq organes — connaissance, technique, création, financement, communication — et un outil sobre pour chacun. Un organe après l'autre.",
   path: '/',
 })
 
@@ -123,9 +123,9 @@ function LandingPage() {
 
           <div className="mt-10 grid gap-10 sm:mt-14 sm:grid-cols-12">
             <p className="chapeau sm:col-span-7 sm:col-start-1">
-              Reprenez le pouvoir d'agir. Des outils sobres qui vous rendent
-              capable — vos idées, vos outils, ce que vous créez, ce que vous
-              financez, votre parole — sans personne pour décider à votre place.
+              Reprendre les moyens de production. Techniques, économiques et
+              de gouvernance : les organes nécessaires pour qu'une alternative
+              existe réellement. Nous les construisons un par un.
             </p>
             <div className="sm:col-span-4 sm:col-start-9 sm:self-end">
               <p className="label text-text/60">Au sommaire</p>
@@ -240,10 +240,10 @@ function LandingPage() {
           <div className="mx-auto max-w-4xl text-center">
             <p className="label text-text/50">L'idée fixe</p>
             <p className="font-heading mt-8 text-4xl uppercase leading-tight sm:text-6xl">
-              Reprendre ses capacités, une à une.
+              Reprendre les moyens, un par un.
               <br />
-              La capacité de tout{' '}
-              <span className="text-accent-primary">changer</span>.
+              Les moyens de construire une{' '}
+              <span className="text-accent-primary">alternative</span>.
             </p>
           </div>
         </div>

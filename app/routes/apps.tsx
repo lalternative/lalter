@@ -7,7 +7,7 @@ export const Route = createFileRoute('/apps')({
     seo({
       title: "Les organes — L'Alternative Fabrique",
       description:
-        "Les cinq organes du pouvoir d'agir : connaissance, technique, création, financement, communication. Un outil sobre pour chacun.",
+        "Les cinq organes d'une alternative : connaissance, technique, création, financement, communication. Un outil sobre pour chacun.",
       path: '/apps',
     }),
 })
@@ -87,10 +87,10 @@ function AppsPage() {
           <p className="label text-text/60">Les organes — № 01</p>
           <h1 className="display-xl mt-6">Les organes</h1>
           <p className="chapeau mt-8 max-w-2xl">
-            Des idées au financement, du faire-exister au se-faire-connaître :
-            les organes du pouvoir d'agir, qu'on peut reprendre un à un. Pour
-            chacun, un outil sobre qui vous en rend capable — rien qui décide à
-            votre place.
+            De la connaissance au financement, de la construction à la
+            diffusion : les organes nécessaires pour faire exister une
+            alternative. Nous les construisons un à un, puis nous les relions
+            pour former un système cohérent.
           </p>
         </div>
       </section>

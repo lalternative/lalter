@@ -10,8 +10,8 @@ export function Footer() {
           <div className="sm:col-span-6">
             <Logo size={96} className="h-24 w-24" />
             <p className="mt-6 max-w-sm text-base text-text/70">
-              Des outils sobres pour reprendre le pouvoir d'agir.
-              Parce qu'on en est capable.
+              Des outils sobres pour construire une alternative.
+              Un organe après l'autre.
             </p>
           </div>
 

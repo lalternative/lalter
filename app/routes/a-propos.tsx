@@ -7,7 +7,7 @@ export const Route = createFileRoute('/a-propos')({
     seo({
       title: "À propos — L'Alternative Fabrique",
       description:
-        "L'Alternative Fabrique réunit des outils sobres qui vous donnent les moyens d'agir par vous-même.",
+        "L'Alternative Fabrique construit les moyens techniques, économiques et de gouvernance d'une alternative, organe après organe.",
       path: '/a-propos',
     }),
 })
@@ -20,10 +20,10 @@ function AProposPage() {
           <p className="label text-text/60">Le collectif</p>
           <h1 className="display-xl mt-6">À propos</h1>
           <p className="chapeau mt-10 max-w-2xl">
-            L'Alternative Fabrique réunit des outils sobres qui vous donnent
-            les moyens d'agir par vous-même — et mutualisent une partie de
-            leurs revenus dans un pot commun pour financer les briques qui
-            manquent encore.
+            L'Alternative Fabrique construit les moyens d'une alternative —
+            techniques, économiques, de gouvernance — et mutualise une partie
+            des revenus de chaque outil dans un pot commun pour financer les
+            organes qui manquent encore.
           </p>
         </div>
       </section>
@@ -32,25 +32,33 @@ function AProposPage() {
         <div className="mx-auto w-full max-w-3xl px-6 py-20 sm:py-28">
           <p className="label text-accent-primary">Notre lecture</p>
           <h2 className="font-heading mt-6 text-4xl uppercase leading-tight sm:text-5xl">
-            Vous en êtes déjà capable.
+            Une idée ne suffit pas.
           </h2>
           <div className="prose-editorial mt-10 text-text/85">
             <p>
-              La plupart des outils décident à votre place : ils simplifient
-              en vous retirant la main. La Fabrique part de l'idée inverse —
-              vous savez ce que vous faites, il suffit qu'on vous en donne les
-              moyens.
+              Aujourd'hui, une opportunité se présente : celle de construire
+              une alternative. Pas une copie de ce qui existe déjà, mais un
+              système pensé autrement.
             </p>
             <p>
-              Chaque outil couvre une capacité concrète : tenir ses comptes,
-              se faire entendre, faire fructifier, garder la main sur son
-              savoir. Sobre, lisible, sans intermédiaire qui s'interpose.
-              Ce qui les relie : une part des revenus reversée au pot commun,
-              et la conviction qu'on peut reprendre la main soi-même.
+              Une idée, pourtant, ne tient pas seule. Elle a besoin de moyens
+              techniques, économiques, culturels et de gouvernance.
             </p>
             <p>
-              Ce n'est pas un manifeste. C'est juste la manière dont on a
-              envie de travailler.
+              L'Alternative Fabrique construit ces moyens, organe après organe.
+            </p>
+            <p>
+              Chaque outil publié occupe une place précise. Certains répondent
+              à un besoin immédiat. D'autres produisent les ressources
+              nécessaires à la construction des organes suivants.
+            </p>
+            <p>
+              Cet ordre n'est pas le fruit du hasard. C'est une architecture.
+            </p>
+            <p>
+              Nous ne vous demandons pas d'adhérer à une promesse. Nous
+              comptons la démontrer, étape après étape, par ce que nous
+              construisons.
             </p>
           </div>
         </div>

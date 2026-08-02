@@ -6,7 +6,7 @@ import { absoluteUrl, jsonLd, seo } from '@/lib/seo'
 const blogSeo = seo({
   title: "La revue — L'Alternative Fabrique",
   description:
-    "Des textes courts et denses sur le pouvoir d'agir concret : garder la main sur son savoir, ses outils, sa parole.",
+    "Des textes courts et denses sur les moyens de construire une alternative : garder la main sur son savoir, ses outils, sa parole.",
   path: '/blog',
 })
 
